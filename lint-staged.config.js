@@ -1,7 +1,7 @@
 module.exports = {
   // markdown files
   // first prettier then lint
-  '*.{md,markdown}': ['prettier --write', 'markdownlint', 'git add'],
+  '!(CHANGELOG).{md,markdown}': ['prettier --write', 'markdownlint', 'git add'],
 
   // js files
   // eslint then prettier
