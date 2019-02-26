@@ -1,0 +1,113 @@
+'use strict';
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var path = require('path');
+var writePkg = _interopDefault(require('write-pkg'));
+var execa = _interopDefault(require('execa'));
+var hasYarn = _interopDefault(require('has-yarn'));
+var fs = require('fs');
+var readPkg = require('read-pkg');
+var cpFile = _interopDefault(require('cp-file'));
+var latestVersion = _interopDefault(require('latest-version'));
+
+const {hasOwnProperty} = Object.prototype;
+
+const TOOLS_DIR = path.join(__dirname, '../tools/');
+const CWD = process.cwd();
+
+function loadToolConfig(name) {
+  return {
+    name,
+    ...require(path.join(TOOLS_DIR, name)),
+  }
+}
+
+const dirs = fs.readdirSync(TOOLS_DIR);
+const tools = dirs.map(loadToolConfig);
+
+var pkg = readPkg.sync();
+
+async function copyFiles(files) {
+  await Promise.all(files.map(({source, target}) => cpFile(source, target)));
+}
+
+function uniq(arr) {
+  return [...new Set(arr)]
+}
+
+async function parseDependencies(dependencies) {
+  dependencies = uniq(dependencies);
+
+  const versions = await Promise.all(
+    dependencies.map(dependency => latestVersion(dependency))
+  );
+
+  return dependencies.reduce(
+    (all, dependency, index) =>
+      Object.assign(all, {[dependency]: `^${versions[index]}`}),
+    {}
+  )
+}
+
+const HAS_YARN = hasYarn();
+const NPM_CLIENT = HAS_YARN ? 'yarn' : 'npm';
+
+setup().then(
+  () => execa(NPM_CLIENT, ['install']),
+  // eslint-disable-next-line no-console
+  error => console.error(error)
+);
+
+async function merge(tools) {
+  const files = tools.reduce(
+    (all, {name, files = []}) =>
+      all.concat(
+        files.map(file => ({
+          source: path.join(TOOLS_DIR, name, file),
+          target: path.join(CWD, file),
+        }))
+      ),
+    []
+  );
+
+  const dependencies = await parseDependencies(
+    tools
+      .reduce((all, {dependencies = []}) => all.concat(dependencies), [])
+      .filter(
+        dependency =>
+          !hasOwnProperty.call(pkg.devDependencies, dependency) &&
+          !hasOwnProperty.call(pkg.devDependencies, dependency)
+      )
+      .sort()
+  );
+
+  const json = tools.reduce(
+    (all, {package: pkg = {}}) => Object.assign(all, pkg),
+    {}
+  );
+
+  return {
+    files,
+    dependencies,
+    json,
+  }
+}
+
+async function setup() {
+  const {files, dependencies, json} = await merge(tools);
+
+  await copyFiles(files);
+
+  pkg.devDependencies = Object.assign(dependencies, pkg.devDependencies);
+  Object.assign(pkg, json);
+
+  // eslint-disable-next-line no-underscore-dangle
+  delete pkg._id;
+
+  await writePkg(pkg);
+}
+
+var cli = {run: setup};
+
+module.exports = cli;

@@ -5,14 +5,30 @@ import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
 import pkg from './package.json'
 
+const external = Object.keys(pkg.dependencies).concat(['path', 'fs'])
+const plugins = [json(), nodeResolve(), commonjs({})]
+const FORMAT_CJS = 'cjs'
+
 export default [
+  // cli
   {
     input: 'src/index.js',
     output: {
       file: 'lib/index.js',
-      format: 'cjs',
+      format: FORMAT_CJS,
     },
     plugins: [json(), nodeResolve(), commonjs({})],
-    external: Object.keys(pkg.dependencies).concat(['path', 'fs']),
+    external,
+  },
+  // cli
+  {
+    input: 'src/cli.js',
+    output: {
+      file: 'bin/cli',
+      format: FORMAT_CJS,
+    },
+    banner: '#!/usr/bin/env node',
+    plugins,
+    external,
   },
 ]
