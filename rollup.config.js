@@ -3,10 +3,13 @@
 import nodeResolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
+// import shebang from 'rollup-plugin-shebang'
+// import {terser} from 'rollup-plugin-terser'
+import prettier from 'rollup-plugin-prettier'
 import pkg from './package.json'
 
 const external = Object.keys(pkg.dependencies).concat(['path', 'fs'])
-const plugins = [json(), nodeResolve(), commonjs({})]
+const plugins = [json(), nodeResolve(), commonjs({}), prettier()]
 const FORMAT_CJS = 'cjs'
 
 export default [
@@ -17,7 +20,7 @@ export default [
       file: 'lib/index.js',
       format: FORMAT_CJS,
     },
-    plugins: [json(), nodeResolve(), commonjs({})],
+    plugins,
     external,
   },
   // cli
@@ -26,9 +29,9 @@ export default [
     output: {
       file: 'bin/cli',
       format: FORMAT_CJS,
+      banner: '#!/usr/bin/env node\n',
     },
-    banner: '#!/usr/bin/env node',
-    plugins,
+    plugins: [...plugins],
     external,
   },
 ]
