@@ -8,8 +8,13 @@ import json from 'rollup-plugin-json'
 import prettier from 'rollup-plugin-prettier'
 import pkg from './package.json'
 
+const prettierConfig = {
+  ...require('./prettier.config'),
+  parser: 'babel',
+}
+
 const external = Object.keys(pkg.dependencies).concat(['path', 'fs'])
-const plugins = [json(), nodeResolve(), commonjs({}), prettier()]
+const plugins = [json(), nodeResolve(), commonjs({}), prettier(prettierConfig)]
 const FORMAT_CJS = 'cjs'
 
 export default [
@@ -31,7 +36,7 @@ export default [
       format: FORMAT_CJS,
       banner: '#!/usr/bin/env node\n',
     },
-    plugins: [...plugins],
+    plugins,
     external,
   },
 ]

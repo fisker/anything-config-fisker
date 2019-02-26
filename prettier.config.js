@@ -24,6 +24,12 @@ module.exports = {
       },
     },
     {
+      files: 'cli',
+      options: {
+        parser: 'babel',
+      },
+    },
+    {
       files: '*.{ts,tsx}',
       options: {
         parser: 'typescript',

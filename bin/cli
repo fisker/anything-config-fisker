@@ -10,27 +10,71 @@ var path = require('path')
 var writePkg = _interopDefault(require('write-pkg'))
 var execa = _interopDefault(require('execa'))
 var hasYarn = _interopDefault(require('has-yarn'))
-var fs = require('fs')
+var inquirer = _interopDefault(require('inquirer'))
 var readPkg = require('read-pkg')
+var fs = require('fs')
 var cpFile = _interopDefault(require('cp-file'))
 var latestVersion = _interopDefault(require('latest-version'))
 
+var pkg = readPkg.sync()
+
 const {hasOwnProperty} = Object.prototype
+
+function isDependencyAdded(dependency) {
+  return (
+    hasOwnProperty.call(pkg.dependencies, dependency) ||
+    hasOwnProperty.call(pkg.devDependencies, dependency)
+  )
+}
+
+function isToolInstalled(tool) {
+  const {files, dependencies, pkg: json} = tool
+
+  if (files.some(({target}) => fs.existsSync(target))) {
+    return 'maybe'
+  }
+
+  if (dependencies.some(isDependencyAdded)) {
+    return 'maybe'
+  }
+
+  if (Object.keys(json).some(key => hasOwnProperty.call(pkg, key))) {
+    return 'maybe'
+  }
+
+  return false
+}
 
 const TOOLS_DIR = path.join(__dirname, '../tools/')
 const CWD = process.cwd()
 
 function loadToolConfig(name) {
+  const config = require(path.join(TOOLS_DIR, name))
+
+  config.install = config.install !== false
+
+  const {files = [], dependencies = [], pkg: json = {}} = config
+
+  config.files = files.map(file => ({
+    name: path.basename(file),
+    source: path.join(TOOLS_DIR, name, file),
+    target: path.join(CWD, file),
+  }))
+
+  config.dependencies = dependencies
+  config.pkg = json
+
+  const installed = isToolInstalled(config)
+
   return {
     name,
-    ...require(path.join(TOOLS_DIR, name)),
+    ...config,
+    installed,
   }
 }
 
 const dirs = fs.readdirSync(TOOLS_DIR)
-const tools = dirs.map(loadToolConfig)
-
-var pkg = readPkg.sync()
+const tools = dirs.sort().map(loadToolConfig)
 
 async function copyFiles(files) {
   await Promise.all(files.map(({source, target}) => cpFile(source, target)))
@@ -43,46 +87,33 @@ function uniq(arr) {
 async function parseDependencies(dependencies) {
   dependencies = uniq(dependencies)
 
-  const versions = await Promise.all(
-    dependencies.map(dependency => latestVersion(dependency))
+  const promises = dependencies.map(dependency =>
+    latestVersion(dependency).then(version => `^${version}`, () => 'latest')
   )
+
+  const versions = await Promise.all(promises)
 
   return dependencies.reduce(
     (all, dependency, index) =>
-      Object.assign(all, {[dependency]: `^${versions[index]}`}),
+      Object.assign(all, {[dependency]: versions[index]}),
     {}
   )
 }
 
+/* eslint-disable no-console */
+
 const HAS_YARN = hasYarn()
 const NPM_CLIENT = HAS_YARN ? 'yarn' : 'npm'
 
-setup().then(
-  () => execa(NPM_CLIENT, ['install']),
-  // eslint-disable-next-line no-console
-  error => console.error(error)
-)
+run()
 
 async function merge(tools) {
-  const files = tools.reduce(
-    (all, {name, files = []}) =>
-      all.concat(
-        files.map(file => ({
-          source: path.join(TOOLS_DIR, name, file),
-          target: path.join(CWD, file),
-        }))
-      ),
-    []
-  )
+  const files = tools.reduce((all, {files = []}) => [...all, ...files], [])
 
   const dependencies = await parseDependencies(
     tools
       .reduce((all, {dependencies = []}) => all.concat(dependencies), [])
-      .filter(
-        dependency =>
-          !hasOwnProperty.call(pkg.devDependencies, dependency) &&
-          !hasOwnProperty.call(pkg.devDependencies, dependency)
-      )
+      .filter(dependency => !isDependencyAdded(dependency))
       .sort()
   )
 
@@ -98,7 +129,7 @@ async function merge(tools) {
   }
 }
 
-async function setup() {
+async function setup(tools) {
   const {files, dependencies, json} = await merge(tools)
 
   await copyFiles(files)
@@ -112,6 +143,83 @@ async function setup() {
   await writePkg(pkg)
 }
 
-var cli = {run: setup}
+async function selectTools() {
+  const choices = tools.map(({name, install, installed}, index) => {
+    const checked = install && !installed
+    let display = `${index + 1}. ${name}`
+
+    if (installed) {
+      display = `${index + 1}. [installed] ${name}`
+    } else if (!install) {
+      display = `${index + 1}. * not install by default * ${name}`
+    }
+
+    return {
+      name: display,
+      value: name,
+      short: name,
+      checked,
+    }
+  })
+
+  const {selected} = await inquirer.prompt({
+    type: 'checkbox',
+    name: 'selected',
+    choices,
+  })
+
+  if (selected.length === 0) {
+    return []
+  }
+
+  const {confirmed} = await inquirer.prompt({
+    type: 'confirm',
+    name: 'confirmed',
+    message: `install ${selected.length} selected config(s): ${selected.join(
+      ','
+    )}?`,
+    default: true,
+  })
+
+  if (!confirmed) {
+    const selected = await selectTools()
+    return selected
+  }
+
+  return tools.filter(({name}) => selected.includes(name))
+}
+
+async function installPackages() {
+  const {confirmed} = await inquirer.prompt({
+    type: 'confirm',
+    name: 'confirmed',
+    message: `run ${NPM_CLIENT} to install?`,
+    default: true,
+  })
+
+  if (!confirmed) {
+    return
+  }
+
+  const args = NPM_CLIENT === 'yarn' ? [] : ['install']
+  const {stdout} = await execa(NPM_CLIENT, args)
+
+  console.log(stdout)
+}
+
+async function run() {
+  const selectedTools = await selectTools()
+
+  if (selectedTools.length === 0) {
+    console.log('nothing to install.')
+    return
+  }
+
+  await setup(selectedTools)
+
+  await installPackages()
+}
+
+var cli = {run}
 
 module.exports = cli
