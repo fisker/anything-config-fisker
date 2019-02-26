@@ -40,6 +40,8 @@ async function merge(tools) {
 
 async function setup(tools) {
   const {files, dependencies, json} = await merge(tools)
+  const newDependencies = Object.keys(dependencies).length !== 0
+  const newFiles = files.length !== 0
 
   await copyFiles(files)
 
@@ -50,6 +52,11 @@ async function setup(tools) {
   delete pkg._id
 
   await writePkg(pkg)
+
+  return {
+    newFiles,
+    newDependencies,
+  }
 }
 
 async function selectTools() {
@@ -131,9 +138,11 @@ async function run() {
     return
   }
 
-  await setup(selectedTools)
+  const {newDependencies} = await setup(selectedTools)
 
-  await installPackages()
+  if (newDependencies) {
+    await installPackages()
+  }
 }
 
 export default {run}
