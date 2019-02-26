@@ -19,8 +19,9 @@
   "scripts": {
     "dev": "rollup --config --watch",
     "clean": "rimraf lib bin",
-    "build": "rollup --config",
-    "pre-release": "npm-run-all clean build",
+    "build": "npm-run-all clean build:*",
+    "build:js": "rollup --config",
+    "pre-release": "npm-run-all build",
     "release": "np --no-yarn --no-cleanup"
   },
   "dependencies": {

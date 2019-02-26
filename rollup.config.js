@@ -17,26 +17,33 @@ const external = Object.keys(pkg.dependencies).concat(['path', 'fs'])
 const plugins = [json(), nodeResolve(), commonjs({}), prettier(prettierConfig)]
 const FORMAT_CJS = 'cjs'
 
+function rollupConfig(config = {}) {
+  if (typeof config === 'string') {
+    config = {
+      entry: config,
+    }
+  }
+
+  const {entry, dist = config.entry, cli} = config
+
+  return {
+    input: `src/${entry}.js`,
+    output: {
+      file: cli ? `bin/${dist}` : `lib/${dist}.js`,
+      format: FORMAT_CJS,
+      banner: cli ? '#!/usr/bin/env node\n' : '',
+    },
+    plugins,
+    external,
+  }
+}
+
 export default [
+  // default
+  rollupConfig('index'),
   // cli
-  {
-    input: 'src/index.js',
-    output: {
-      file: 'lib/index.js',
-      format: FORMAT_CJS,
-    },
-    plugins,
-    external,
-  },
-  // cli
-  {
-    input: 'src/cli.js',
-    output: {
-      file: 'bin/cli',
-      format: FORMAT_CJS,
-      banner: '#!/usr/bin/env node\n',
-    },
-    plugins,
-    external,
-  },
+  rollupConfig({
+    entry: 'cli',
+    cli: true,
+  }),
 ]
