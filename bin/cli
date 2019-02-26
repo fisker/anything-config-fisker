@@ -21,11 +21,12 @@ var pkg = readPkg.sync()
 
 const {hasOwnProperty} = Object.prototype
 
+const dependencies = {
+  ...pkg.dependencies,
+  ...pkg.devDependencies,
+}
 function isDependencyAdded(dependency) {
-  return (
-    hasOwnProperty.call(pkg.dependencies, dependency) ||
-    hasOwnProperty.call(pkg.devDependencies, dependency)
-  )
+  return hasOwnProperty.call(dependencies, dependency)
 }
 
 function isToolInstalled(tool) {
