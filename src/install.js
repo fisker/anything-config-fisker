@@ -94,7 +94,11 @@ async function install() {
 
   pkg.devDependencies = Object.assign(dependencies, pkg.devDependencies)
   Object.assign(pkg, json)
+
+  // eslint-disable-next-line no-underscore-dangle
   delete pkg._id
 
   await writePkg(pkg)
 }
+
+export default install

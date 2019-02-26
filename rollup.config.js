@@ -7,9 +7,9 @@ import pkg from './package.json'
 
 export default [
   {
-    input: 'src/install.js',
+    input: 'src/index.js',
     output: {
-      file: 'lib/install.js',
+      file: 'lib/index.js',
       format: 'cjs',
     },
     plugins: [json(), nodeResolve(), commonjs({})],

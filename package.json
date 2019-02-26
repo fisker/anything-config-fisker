@@ -2,11 +2,15 @@
   "name": "anthing-config-fisker",
   "version": "1.0.0",
   "description": "all configs for fisker",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/fisker/anthing-config-fisker.git"
   },
+  "bin": {
+    "fisker-config": "bin/cli.js"
+  },
+  "files": ["bin", "cli"],
   "author": {
     "name": "fisker",
     "email": "lionkay@gmail.com"
@@ -14,8 +18,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "rollup --config --watch",
+    "clean": "rm -rf lib",
     "build": "rollup --config",
-    "release": "standard-version"
+    "pre-release": "npm-run-all clean build",
+    "release": "standard-version && np --no-yarn --no-cleanup"
   },
   "dependencies": {
     "cp-file": "^6.0.0",
@@ -36,8 +42,10 @@
     "husky": "^1.3.1",
     "lint-staged": "^8.1.4",
     "markdownlint-cli": "^0.14.0",
+    "np": "^4.0.2",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.16.4",
-    "rollup": "^1.2.4",
+    "rollup": "^1.2.5",
     "rollup-plugin-commonjs": "^9.2.1",
     "rollup-plugin-json": "^3.1.0",
     "rollup-plugin-node-resolve": "^4.0.1",
