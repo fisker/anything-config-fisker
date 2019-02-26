@@ -1,16 +1,15 @@
 /* eslint-disable no-console */
 
-import {join} from 'path'
 import writePkg from 'write-pkg'
 import execa from 'execa'
 import hasYarn from 'has-yarn'
 import inquirer from 'inquirer'
+import chalk from 'chalk'
 import isDependencyAdded from './utils/is-dependency-added'
 import tools from './utils/tools'
 import pkg from './utils/pkg'
 import copyFiles from './utils/copy-files'
 import parseDependencies from './utils/parse-dependencies'
-import {TOOLS_DIR, CWD} from './constants'
 
 const HAS_YARN = hasYarn()
 const NPM_CLIENT = HAS_YARN ? 'yarn' : 'npm'
@@ -54,28 +53,35 @@ async function setup(tools) {
 }
 
 async function selectTools() {
-  const choices = tools.map(({name, install, installed}, index) => {
-    const checked = install && !installed
-    let display = `${index + 1}. ${name}`
+  const choices = tools.map(
+    ({name, installByDefault, isInstalled}, index, {length}) => {
+      const checked = installByDefault && !isInstalled
+      const maxIndexLength = String(length).length + 1
 
-    if (installed) {
-      display = `${index + 1}. [installed] ${name}`
-    } else if (!install) {
-      display = `${index + 1}. * not install by default * ${name}`
-    }
+      const display = [
+        chalk.gray(`${index + 1}.`.padStart(maxIndexLength)),
+        isInstalled ? chalk.red('[installed]') : '',
+        chalk.bold(name),
+        installByDefault ? '' : chalk.gray('* not install by default *'),
+      ]
+        .filter(Boolean)
+        .join(' ')
 
-    return {
-      name: display,
-      value: name,
-      short: name,
-      checked,
+      return {
+        name: display,
+        value: name,
+        short: name,
+        checked,
+      }
     }
-  })
+  )
 
   const {selected} = await inquirer.prompt({
     type: 'checkbox',
     name: 'selected',
+    message: 'select config(s) you want install:',
     choices,
+    pageSize: choices.length,
   })
 
   if (selected.length === 0) {

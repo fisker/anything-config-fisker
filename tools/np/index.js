@@ -1,7 +1,7 @@
 module.exports = {
   files: [],
   dependencies: ['np'],
-  install: false,
+  installByDefault: false,
   package: {
     publishConfig: {
       registry: 'https://registry.npmjs.org/',

@@ -1,30 +1,36 @@
 import {readdirSync} from 'fs'
-import {join, basename} from 'path'
+import {join, relative} from 'path'
 import isToolInstalled from './is-tool-installed'
 import {TOOLS_DIR, CWD} from '../constants'
 
-function loadToolConfig(name) {
-  const config = require(join(TOOLS_DIR, name))
+function loadToolConfig(dirName) {
+  const config = require(join(TOOLS_DIR, dirName))
 
-  config.install = config.install !== false
+  config.installByDefault = config.installByDefault !== false
 
   const {files = [], dependencies = [], pkg: json = {}} = config
 
-  config.files = files.map(file => ({
-    name: basename(file),
-    source: join(TOOLS_DIR, name, file),
-    target: join(CWD, file),
-  }))
+  config.files = files.map(file => {
+    const dir = join(TOOLS_DIR, dirName)
+    const source = join(dir, file)
+    const target = join(CWD, file)
+    const path = relative(dir, source)
+
+    return {
+      path,
+      dir,
+      source,
+      target,
+    }
+  })
 
   config.dependencies = dependencies
   config.pkg = json
 
-  const installed = isToolInstalled(config)
-
   return {
-    name,
+    name: dirName,
     ...config,
-    installed,
+    isInstalled: isToolInstalled(config),
   }
 }
 
