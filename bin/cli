@@ -2155,7 +2155,7 @@ async function selectTools() {
     name: 'selected',
     message: 'select config(s) you want install:',
     choices,
-    pageSize: choices.length,
+    pageSize: Math.min(choices.length, 15),
   })
 
   if (selected.length === 0) {
