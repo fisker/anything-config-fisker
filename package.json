@@ -1,6 +1,6 @@
 {
   "name": "anthing-config-fisker",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "description": "all configs for fisker",
   "main": "lib/index.js",
   "repository": {
@@ -10,7 +10,10 @@
   "bin": {
     "fisker-config": "bin/cli.js"
   },
-  "files": ["bin", "cli"],
+  "files": [
+    "bin",
+    "cli"
+  ],
   "author": {
     "name": "fisker",
     "email": "lionkay@gmail.com"
@@ -21,7 +24,7 @@
     "clean": "rm -rf lib",
     "build": "rollup --config",
     "pre-release": "npm-run-all clean build",
-    "release": "standard-version && np --no-yarn --no-cleanup"
+    "release": "standard-version --no-verify && np --no-yarn --no-cleanup"
   },
   "dependencies": {
     "cp-file": "^6.0.0",
