@@ -1,3 +1,15 @@
+# eslint ignore
+
+# also lint . files
 !.*
-{dist,lib,node_modules}/**
+
+# build file
+lib/**
+dist/**
+**/*.min.*
+
+# node_modules
+node_modules/**
+
+# fixtures
 **/fixtures/**
