@@ -4,7 +4,7 @@ import nodeResolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
 // import shebang from 'rollup-plugin-shebang'
-// import {terser} from 'rollup-plugin-terser'
+import {terser} from 'rollup-plugin-terser'
 import prettier from 'rollup-plugin-prettier'
 import pkg from './package.json'
 
@@ -29,7 +29,7 @@ function rollupConfig(config = {}) {
   return {
     input: `src/${entry}.js`,
     output: {
-      file: cli ? `bin/${dist}` : `lib/${dist}.js`,
+      file: `${cli ? 'bin' : 'lib'}/${dist}.js`,
       format: FORMAT_CJS,
       banner: cli ? '#!/usr/bin/env node\n' : '',
     },
