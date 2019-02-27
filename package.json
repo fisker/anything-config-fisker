@@ -3,10 +3,7 @@
   "version": "1.7.16",
   "description": "all configs for fisker",
   "main": "lib/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/fisker/anything-config-fisker.git"
-  },
+  "repository": "https://github.com/fisker/anything-config-fisker",
   "bin": {
     "fisker-config": "bin/cli.js"
   },

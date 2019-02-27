@@ -15,7 +15,7 @@ const path = require('path')
 const cpFile = _interopDefault(require('cp-file'))
 const latestVersion = _interopDefault(require('latest-version'))
 
-const pkg = readPkg.sync()
+const pkg = readPkg.sync({normalize: false})
 
 const {hasOwnProperty} = Object.prototype
 

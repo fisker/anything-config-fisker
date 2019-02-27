@@ -4,7 +4,7 @@ import nodeResolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
 // import shebang from 'rollup-plugin-shebang'
-import {terser} from 'rollup-plugin-terser'
+// import {terser} from 'rollup-plugin-terser'
 import prettier from 'rollup-plugin-prettier'
 import pkg from './package.json'
 
