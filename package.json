@@ -1,6 +1,6 @@
 {
   "name": "anything-config-fisker",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "all configs for fisker",
   "main": "lib/index.js",
   "repository": "https://github.com/fisker/anything-config-fisker",
