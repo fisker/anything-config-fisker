@@ -16,6 +16,7 @@
   "scripts": {
     "dev": "rollup --config --watch",
     "clean": "rimraf lib bin",
+    "prettier": "prettier **/*.{js,json,yml,md} --write",
     "build": "npm-run-all clean build:*",
     "build:js": "rollup --config",
     "pre-release": "npm-run-all build",
