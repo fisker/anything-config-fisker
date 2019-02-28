@@ -1,21 +1,23 @@
 #!/usr/bin/env node
 
+'use strict'
+
 function _interopDefault(ex) {
-  return ex && typeof ex === 'object' && 'default' in ex ? ex.default : ex
+  return ex && typeof ex === 'object' && 'default' in ex ? ex['default'] : ex
 }
 
-const writePkg = _interopDefault(require('write-pkg'))
-const execa = _interopDefault(require('execa'))
-const hasYarn = _interopDefault(require('has-yarn'))
-const inquirer = _interopDefault(require('inquirer'))
-const chalk = _interopDefault(require('chalk'))
-const readPkg = require('read-pkg')
-const fs = require('fs')
-const path = require('path')
-const cpFile = _interopDefault(require('cp-file'))
-const latestVersion = _interopDefault(require('latest-version'))
+var writePkg = _interopDefault(require('write-pkg'))
+var execa = _interopDefault(require('execa'))
+var hasYarn = _interopDefault(require('has-yarn'))
+var inquirer = _interopDefault(require('inquirer'))
+var chalk = _interopDefault(require('chalk'))
+var readPkg = require('read-pkg')
+var fs = require('fs')
+var path = require('path')
+var cpFile = _interopDefault(require('cp-file'))
+var latestVersion = _interopDefault(require('latest-version'))
 
-const pkg = readPkg.sync({normalize: false})
+var pkg = readPkg.sync({normalize: false})
 
 const {hasOwnProperty} = Object.prototype
 
@@ -240,6 +242,6 @@ async function run() {
   }
 }
 
-const cli = {run}
+var cli = {run}
 
 module.exports = cli

@@ -1,5 +1,5 @@
 /*!
- * config file for lint-staged
+ * config file for `lint-staged`
  *
  * update: wget https://git.io/fhNpr
  * document: https://git.io/fhNpF
