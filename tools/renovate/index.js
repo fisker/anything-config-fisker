@@ -1,6 +1,7 @@
 module.exports = {
-  files: ['renovate.json'],
-  dependencies: [],
-  installByDefault: false,
-  package: {},
+  effects: {
+    files: ['renovate.json'],
+    dependencies: [],
+    package: [],
+  },
 }

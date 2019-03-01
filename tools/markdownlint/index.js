@@ -1,4 +1,7 @@
 module.exports = {
-  files: ['.markdownlint.json'],
-  dependencies: ['markdownlint-cli'],
+  effects: {
+    files: ['.markdownlint.json'],
+    dependencies: ['markdownlint-cli'],
+    package: [],
+  },
 }

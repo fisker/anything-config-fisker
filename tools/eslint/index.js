@@ -1,4 +1,8 @@
 module.exports = {
-  files: ['.eslintignore', '.eslintrc.js'],
-  dependencies: ['eslint', '@xwtec/eslint-config', 'prettier'],
+  name: 'ESLint',
+  effects: {
+    files: ['.eslintignore', '.eslintrc.js'],
+    dependencies: ['eslint', '@xwtec/eslint-config', 'prettier'],
+    package: [],
+  },
 }

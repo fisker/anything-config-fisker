@@ -1,4 +1,8 @@
 module.exports = {
-  files: ['.editorconfig'],
-  dependencies: [],
+  name: 'EditorConfig',
+  effects: {
+    files: ['.editorconfig'],
+    dependencies: [],
+    package: [],
+  },
 }

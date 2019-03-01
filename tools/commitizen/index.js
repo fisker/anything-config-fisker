@@ -1,11 +1,10 @@
 module.exports = {
-  files: [],
-  dependencies: ['cz-conventional-changelog-emoji'],
-  package: {
-    config: {
-      commitizen: {
-        path: './node_modules/cz-conventional-changelog-emoji',
-      },
+  effects: {
+    files: [],
+    dependencies: ['cz-conventional-changelog-emoji'],
+    package: {
+      key: 'config.commitizen.path',
+      value: './node_modules/cz-conventional-changelog-emoji',
     },
   },
 }

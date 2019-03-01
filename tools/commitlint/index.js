@@ -1,4 +1,7 @@
 module.exports = {
-  files: ['commitlint.config.js'],
-  dependencies: ['@commitlint/cli', '@commitlint/config-conventional'],
+  effects: {
+    files: ['commitlint.config.js'],
+    dependencies: ['@commitlint/cli', '@commitlint/config-conventional'],
+    package: [],
+  },
 }

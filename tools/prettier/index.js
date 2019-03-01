@@ -1,4 +1,7 @@
 module.exports = {
-  files: ['.prettierignore', 'prettier.config.js'],
-  dependencies: ['prettier'],
+  effects: {
+    files: ['.prettierignore', 'prettier.config.js'],
+    dependencies: ['prettier'],
+    package: [],
+  },
 }
