@@ -10,6 +10,7 @@
 # vendors
 node_modules/**
 **/vendors/**
+**/vendor/**
 **/third-party/**
 
 # build file
