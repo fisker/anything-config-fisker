@@ -76,9 +76,7 @@ const LANG_CONFIG = {
   less: {
     singleQuote: false,
   },
-  vue: {
-    singleQuote: false,
-  },
+  vue: {},
   json: {
     singleQuote: false,
   },
