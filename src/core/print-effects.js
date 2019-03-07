@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-import chalk from 'chalk'
+import colors from 'ansi-colors'
 
 function mergeEffectsByKey(tools, key) {
   return tools.reduce((all, {effects}) => all.concat(effects[key]), [])
@@ -25,50 +25,48 @@ function printEffects(tools) {
 
   if (files.length !== 0) {
     console.log(
-      chalk.yellowBright(
-        `effect ${files.length} file${files.length > 1 ? 's' : ''}`
-      )
+      colors.yellowBright(`${files.length} file${files.length > 1 ? 's' : ''}`)
     )
     for (const {sourceRelative, destRelative, exists} of files) {
       console.log(
-        ` - ${destRelative}${exists ? chalk.red(' (overwrite)') : ''}`
+        ` - ${destRelative}${exists ? colors.red(' (overwrite)') : ''}`
       )
-      // console.log(`    from ${chalk.gray(sourceRelative)}`)
+      // console.log(`    from ${colors.gray(sourceRelative)}`)
     }
     console.log('')
   }
 
   if (dependencies.length !== 0) {
     console.log(
-      chalk.yellowBright(
-        `add ${dependencies.length} ${
+      colors.yellowBright(
+        `${dependencies.length} ${
           files.length > 1 ? 'dependencies' : 'dependency'
-        } to package.json`
+        } add to package.json`
       )
     )
     for (const {name, version, type, exists} of dependencies) {
-      console.log(` - ${name}${exists ? chalk.red(' (overwrite)') : ''}`)
+      console.log(` - ${name}${exists ? colors.red(' (overwrite)') : ''}`)
     }
     console.log('')
   }
 
   if (pkgs.length !== 0) {
     console.log(
-      chalk.yellowBright(
-        `add ${pkgs.length} value${pkgs.length > 1 ? 's' : ''} to package.json`
+      colors.yellowBright(
+        `${pkgs.length} change${pkgs.length > 1 ? 's' : ''} in package.json`
       )
     )
     for (const {key, segments, orignal, value, exists, equal} of pkgs) {
       console.log(
-        ` - ${segments.join('.')}${exists ? chalk.red(' (overwrite)') : ''}`
+        ` - ${segments.join('.')}${exists ? colors.red(' (overwrite)') : ''}`
       )
 
       if (!equal) {
         if (orignal) {
-          console.log(`    from: ${chalk.gray(JSON.stringify(orignal))}`)
-          console.log(`      to: ${chalk.gray(JSON.stringify(orignal))}`)
+          console.log(`    from: ${colors.gray(JSON.stringify(orignal))}`)
+          console.log(`      to: ${colors.gray(JSON.stringify(orignal))}`)
         } else {
-          console.log(`    ${chalk.gray(JSON.stringify(orignal))}`)
+          console.log(`    ${colors.gray(JSON.stringify(orignal))}`)
         }
       }
     }

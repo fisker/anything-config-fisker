@@ -3,8 +3,8 @@
 import writePkg from 'write-pkg'
 import execa from 'execa'
 import hasYarn from 'has-yarn'
-import inquirer from 'inquirer'
-import chalk from 'chalk'
+import {prompt} from 'enquirer'
+import colors from 'ansi-colors'
 // import isDependencyAdded from './utils/is-dependency-added'
 import tools from './tools'
 import pkg from './utils/pkg'
@@ -64,23 +64,23 @@ async function selectTools() {
   const choices = tools.map(({id, name, isInstalled}, index, {length}) => {
     const maxIndexLength = String(length).length + 1
 
-    const display = [
-      chalk.gray(`${index + 1}.`.padStart(maxIndexLength)),
-      isInstalled ? chalk.red('[installed]') : '',
-      chalk.bold(name),
+    const message = [
+      colors.gray(`${index + 1}.`.padStart(maxIndexLength)),
+      isInstalled ? colors.red('[installed]') : '',
+      colors.bold(name),
     ]
       .filter(Boolean)
       .join(' ')
 
     return {
-      name: display,
+      name,
       value: id,
-      short: name,
+      message,
     }
   })
 
-  const {selectedIds} = await inquirer.prompt({
-    type: 'checkbox',
+  const {selectedIds} = await prompt({
+    type: 'multiselect',
     name: 'selectedIds',
     message: 'select config(s) you want install:',
     choices,
@@ -92,16 +92,19 @@ async function selectTools() {
     return selected
   }
 
-  const selected = tools.filter(({id}) => selectedIds.includes(id))
+  // FIXME: currently enquirer returns names instead of values
+  // issue: https://github.com/enquirer/enquirer/issues/121
+  const selected = tools.filter(({name}) => selectedIds.includes(name))
+  // const selected = tools.filter(({id}) => selectedIds.includes(id))
   const names = selected.map(({name}) => name)
 
-  const {confirmed} = await inquirer.prompt({
+  const {confirmed} = await prompt({
     type: 'confirm',
     name: 'confirmed',
     message: `install ${selected.length} selected config(s): ${names.join(
       ','
     )}?`,
-    default: true,
+    initial: true,
   })
 
   if (!confirmed) {
@@ -113,11 +116,11 @@ async function selectTools() {
 }
 
 async function installPackages() {
-  const {confirmed} = await inquirer.prompt({
+  const {confirmed} = await prompt({
     type: 'confirm',
     name: 'confirmed',
     message: `run ${NPM_CLIENT} to install?`,
-    default: true,
+    initial: true,
   })
 
   if (!confirmed) {
@@ -139,11 +142,11 @@ async function run() {
   const {files, dependencies, package: pkgs} = printEffects(selectedTools)
 
   if (files.length !== 0 || dependencies.length !== 0 || pkgs.length !== 0) {
-    const {confirmed} = await inquirer.prompt({
+    const {confirmed} = await prompt({
       type: 'confirm',
       name: 'confirmed',
       message: `confirmed effects above?`,
-      default: true,
+      initial: true,
     })
 
     if (!confirmed) {

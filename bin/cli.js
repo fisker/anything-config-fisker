@@ -9,8 +9,8 @@ function _interopDefault(ex) {
 require('write-pkg')
 var execa = _interopDefault(require('execa'))
 var hasYarn = _interopDefault(require('has-yarn'))
-var inquirer = _interopDefault(require('inquirer'))
-var chalk = _interopDefault(require('chalk'))
+var enquirer = require('enquirer')
+var colors = _interopDefault(require('ansi-colors'))
 var fs = require('fs')
 var path = require('path')
 var readPkg = require('read-pkg')
@@ -286,50 +286,48 @@ function printEffects(tools) {
 
   if (files.length !== 0) {
     console.log(
-      chalk.yellowBright(
-        `effect ${files.length} file${files.length > 1 ? 's' : ''}`
-      )
+      colors.yellowBright(`${files.length} file${files.length > 1 ? 's' : ''}`)
     )
     for (const {sourceRelative, destRelative, exists} of files) {
       console.log(
-        ` - ${destRelative}${exists ? chalk.red(' (overwrite)') : ''}`
+        ` - ${destRelative}${exists ? colors.red(' (overwrite)') : ''}`
       )
-      // console.log(`    from ${chalk.gray(sourceRelative)}`)
+      // console.log(`    from ${colors.gray(sourceRelative)}`)
     }
     console.log('')
   }
 
   if (dependencies.length !== 0) {
     console.log(
-      chalk.yellowBright(
-        `add ${dependencies.length} ${
+      colors.yellowBright(
+        `${dependencies.length} ${
           files.length > 1 ? 'dependencies' : 'dependency'
-        } to package.json`
+        } add to package.json`
       )
     )
     for (const {name, version, type, exists} of dependencies) {
-      console.log(` - ${name}${exists ? chalk.red(' (overwrite)') : ''}`)
+      console.log(` - ${name}${exists ? colors.red(' (overwrite)') : ''}`)
     }
     console.log('')
   }
 
   if (pkgs.length !== 0) {
     console.log(
-      chalk.yellowBright(
-        `add ${pkgs.length} value${pkgs.length > 1 ? 's' : ''} to package.json`
+      colors.yellowBright(
+        `${pkgs.length} change${pkgs.length > 1 ? 's' : ''} in package.json`
       )
     )
     for (const {key, segments, orignal, value, exists, equal} of pkgs) {
       console.log(
-        ` - ${segments.join('.')}${exists ? chalk.red(' (overwrite)') : ''}`
+        ` - ${segments.join('.')}${exists ? colors.red(' (overwrite)') : ''}`
       )
 
       if (!equal) {
         if (orignal) {
-          console.log(`    from: ${chalk.gray(JSON.stringify(orignal))}`)
-          console.log(`      to: ${chalk.gray(JSON.stringify(orignal))}`)
+          console.log(`    from: ${colors.gray(JSON.stringify(orignal))}`)
+          console.log(`      to: ${colors.gray(JSON.stringify(orignal))}`)
         } else {
-          console.log(`    ${chalk.gray(JSON.stringify(orignal))}`)
+          console.log(`    ${colors.gray(JSON.stringify(orignal))}`)
         }
       }
     }
@@ -397,23 +395,23 @@ async function selectTools() {
   const choices = tools.map(({id, name, isInstalled}, index, {length}) => {
     const maxIndexLength = String(length).length + 1
 
-    const display = [
-      chalk.gray(`${index + 1}.`.padStart(maxIndexLength)),
-      isInstalled ? chalk.red('[installed]') : '',
-      chalk.bold(name),
+    const message = [
+      colors.gray(`${index + 1}.`.padStart(maxIndexLength)),
+      isInstalled ? colors.red('[installed]') : '',
+      colors.bold(name),
     ]
       .filter(Boolean)
       .join(' ')
 
     return {
-      name: display,
+      name,
       value: id,
-      short: name,
+      message,
     }
   })
 
-  const {selectedIds} = await inquirer.prompt({
-    type: 'checkbox',
+  const {selectedIds} = await enquirer.prompt({
+    type: 'multiselect',
     name: 'selectedIds',
     message: 'select config(s) you want install:',
     choices,
@@ -425,16 +423,19 @@ async function selectTools() {
     return selected
   }
 
-  const selected = tools.filter(({id}) => selectedIds.includes(id))
+  // FIXME: currently enquirer returns names instead of values
+  // issue: https://github.com/enquirer/enquirer/issues/121
+  const selected = tools.filter(({name}) => selectedIds.includes(name))
+  // const selected = tools.filter(({id}) => selectedIds.includes(id))
   const names = selected.map(({name}) => name)
 
-  const {confirmed} = await inquirer.prompt({
+  const {confirmed} = await enquirer.prompt({
     type: 'confirm',
     name: 'confirmed',
     message: `install ${selected.length} selected config(s): ${names.join(
       ','
     )}?`,
-    default: true,
+    initial: true,
   })
 
   if (!confirmed) {
@@ -446,11 +447,11 @@ async function selectTools() {
 }
 
 async function installPackages() {
-  const {confirmed} = await inquirer.prompt({
+  const {confirmed} = await enquirer.prompt({
     type: 'confirm',
     name: 'confirmed',
     message: `run ${NPM_CLIENT} to install?`,
-    default: true,
+    initial: true,
   })
 
   if (!confirmed) {
@@ -472,11 +473,11 @@ async function run() {
   const {files, dependencies, package: pkgs} = printEffects(selectedTools)
 
   if (files.length !== 0 || dependencies.length !== 0 || pkgs.length !== 0) {
-    const {confirmed} = await inquirer.prompt({
+    const {confirmed} = await enquirer.prompt({
       type: 'confirm',
       name: 'confirmed',
       message: `confirmed effects above?`,
-      default: true,
+      initial: true,
     })
 
     if (!confirmed) {

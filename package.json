@@ -23,11 +23,11 @@
     "release": "np --no-yarn --no-cleanup"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
+    "ansi-colors": "^3.2.4",
     "cp-file": "^6.0.0",
+    "enquirer": "^2.3.0",
     "execa": "^1.0.0",
     "has-yarn": "^1.0.0",
-    "inquirer": "^6.2.2",
     "latest-version": "^4.0.0",
     "read-pkg": "^4.0.1",
     "write-pkg": "^3.2.0"
