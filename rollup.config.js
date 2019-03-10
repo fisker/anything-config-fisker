@@ -3,16 +3,12 @@
 import nodeResolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
+import babel from 'rollup-plugin-babel'
 import {terser} from 'rollup-plugin-terser'
 import pkg from './package.json'
 
-const prettierConfig = {
-  ...require('./prettier.config'),
-  parser: 'babel',
-}
-
 const external = Object.keys(pkg.dependencies).concat(['path', 'fs'])
-const plugins = [json(), nodeResolve(), commonjs({}), terser()]
+const plugins = [json(), nodeResolve(), commonjs(), babel(), terser()]
 const FORMAT_CJS = 'cjs'
 
 function rollupConfig(config = {}) {
