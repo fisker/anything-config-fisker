@@ -19,8 +19,9 @@
     "lint": "eslint src/*.js --fix",
     "build": "npm-run-all lint build:*",
     "build:js": "rollup --config",
-    "publish": "np --no-yarn --no-cleanup",
-    "release": " npm-run-all clean build publish"
+    "dist": "npm-run-all build:*",
+    "dist:npm": "np --no-yarn --no-cleanup",
+    "release": " npm-run-all clean build dist"
   },
   "dependencies": {
     "ansi-colors": "^3.2.4",
