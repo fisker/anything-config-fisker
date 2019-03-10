@@ -3,9 +3,7 @@
 import nodeResolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
-// import shebang from 'rollup-plugin-shebang'
-// import {terser} from 'rollup-plugin-terser'
-import prettier from 'rollup-plugin-prettier'
+import {terser} from 'rollup-plugin-terser'
 import pkg from './package.json'
 
 const prettierConfig = {
@@ -14,7 +12,7 @@ const prettierConfig = {
 }
 
 const external = Object.keys(pkg.dependencies).concat(['path', 'fs'])
-const plugins = [json(), nodeResolve(), commonjs({}), prettier(prettierConfig)]
+const plugins = [json(), nodeResolve(), commonjs({}), terser()]
 const FORMAT_CJS = 'cjs'
 
 function rollupConfig(config = {}) {
@@ -37,9 +35,4 @@ function rollupConfig(config = {}) {
   }
 }
 
-export default [
-  // default
-  // rollupConfig('index'),
-  // cli
-  rollupConfig('cli'),
-]
+export default [rollupConfig('cli')]

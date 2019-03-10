@@ -16,14 +16,15 @@
     "dev": "rollup --config --watch",
     "clean": "rimraf lib",
     "prettier": "prettier **/*.{js,json,yml,md} --write",
-    "build": "npm-run-all clean build:*",
+    "lint": "eslint **/*.js --fix",
+    "build": "npm-run-all lint build:*",
     "build:js": "rollup --config",
-    "pre-release": "npm-run-all build",
-    "release": "np --no-yarn --no-cleanup"
+    "publish": "np --no-yarn --no-cleanup",
+    "release": " npm-run-all clean build publish"
   },
   "dependencies": {
     "ansi-colors": "^3.2.4",
-    "cp-file": "^6.0.0",
+    "cp-file": "^6.1.0",
     "enquirer": "^2.3.0",
     "execa": "^1.0.0",
     "has-yarn": "^1.0.0",
@@ -48,7 +49,6 @@
     "rollup-plugin-commonjs": "^9.2.1",
     "rollup-plugin-json": "^3.1.0",
     "rollup-plugin-node-resolve": "^4.0.1",
-    "rollup-plugin-prettier": "^0.6.0",
     "rollup-plugin-shebang": "^0.1.5",
     "rollup-plugin-terser": "^4.0.4",
     "standard-version": "^5.0.0"
