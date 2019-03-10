@@ -3,7 +3,7 @@ import writePackage from './write-package'
 import isExists from '../tools/is-exists'
 
 async function writeDependency({type, name}) {
-  const key = [type || 'devDependency', name]
+  const key = [type || 'devDependencies', name]
   const version = await latestVersion(name)
   const value = version ? `^${version}` : 'latest'
 
