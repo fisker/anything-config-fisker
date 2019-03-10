@@ -1,22 +1,25 @@
-# ignore file for prettier
+# ignore file for `prettier`
 #
 # update: wget https://git.io/fhNj3
 # document: https://prettier.io/docs/en/ignore.html#ignoring-files
-# *
+#
 
 # also prettier dot files
 !.*
+
+# vendors
+node_modules/**
+**/vendors/**
+**/vendor/**
+**/third-party/**
 
 # build file
 lib/**
 dist/**
 **/*.min.*
 
-# node_modules
-node_modules/**
-
 # fixtures
 **/fixtures/**
 
-# own glob
-bin/**
+# project glob
+

@@ -2,12 +2,11 @@
   "name": "anything-config-fisker",
   "version": "1.9.0",
   "description": "all configs for fisker",
-  "main": "lib/index.js",
   "repository": "https://github.com/fisker/anything-config-fisker",
   "bin": {
-    "fisker-config": "bin/cli.js"
+    "fisker-config": "cli.js"
   },
-  "files": ["bin", "cli", "tools"],
+  "files": ["cli.js", "lib", "tools"],
   "author": {
     "name": "fisker",
     "email": "lionkay@gmail.com"
@@ -15,7 +14,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "rollup --config --watch",
-    "clean": "rimraf lib bin",
+    "clean": "rimraf lib",
     "prettier": "prettier **/*.{js,json,yml,md} --write",
     "build": "npm-run-all clean build:*",
     "build:js": "rollup --config",
@@ -66,5 +65,17 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog-emoji"
     }
+  },
+  "devDependency": {
+    "cz-conventional-changelog-emoji": "^0.1.0",
+    "@commitlint/config-conventional": "^7.5.0",
+    "markdownlint-cli": "^0.14.0",
+    "@commitlint/cli": "^7.5.2",
+    "np": "^4.0.2",
+    "@xwtec/eslint-config": "^3.7.0",
+    "prettier": "^1.16.4",
+    "lint-staged": "^8.1.5",
+    "husky": "^1.3.1",
+    "eslint": "^5.15.1"
   }
 }

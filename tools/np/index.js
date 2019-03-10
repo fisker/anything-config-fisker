@@ -2,7 +2,7 @@ module.exports = {
   effects: {
     files: [],
     dependencies: ['np'],
-    package: {
+    'package.json': {
       key: 'publishConfig.registry',
       value: 'https://registry.npmjs.org/',
     },

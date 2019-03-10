@@ -7,7 +7,7 @@ function toArray(x) {
 }
 
 function effectsParser(effects, dir) {
-  let {files = [], dependencies = [], package: pkg = []} = effects
+  let {files = [], dependencies = [], 'package.json': pkg = []} = effects
 
   files = toArray(files)
     .map(file => fileParser(file, dir))
@@ -22,7 +22,7 @@ function effectsParser(effects, dir) {
   return {
     files,
     dependencies,
-    package: pkg,
+    pkg,
   }
 }
 

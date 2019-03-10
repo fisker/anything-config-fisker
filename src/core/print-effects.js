@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 import colors from 'ansi-colors'
 
 function mergeEffectsByKey(tools, key) {
@@ -19,7 +17,7 @@ function printEffects(tools) {
   const dependencies = mergeEffectsByKey(tools, 'dependencies').sort(
     sortBy('name')
   )
-  const pkgs = mergeEffectsByKey(tools, 'package')
+  const pkg = mergeEffectsByKey(tools, 'pkg')
     .filter(notEqualFilter)
     .sort(sortBy('key'))
 
@@ -50,13 +48,13 @@ function printEffects(tools) {
     console.log('')
   }
 
-  if (pkgs.length !== 0) {
+  if (pkg.length !== 0) {
     console.log(
       colors.yellowBright(
-        `${pkgs.length} change${pkgs.length > 1 ? 's' : ''} in package.json`
+        `${pkg.length} change${pkg.length > 1 ? 's' : ''} in package.json`
       )
     )
-    for (const {key, segments, orignal, value, exists, equal} of pkgs) {
+    for (const {key, segments, orignal, value, exists, equal} of pkg) {
       console.log(
         ` - ${segments.join('.')}${exists ? colors.red(' (overwrite)') : ''}`
       )
@@ -76,7 +74,7 @@ function printEffects(tools) {
   return {
     files,
     dependencies,
-    package: pkgs,
+    pkg,
   }
 }
 

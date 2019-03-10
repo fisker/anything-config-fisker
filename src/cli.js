@@ -1,64 +1,14 @@
-/* eslint-disable no-console */
-
-import writePkg from 'write-pkg'
 import execa from 'execa'
 import hasYarn from 'has-yarn'
 import {prompt} from 'enquirer'
 import colors from 'ansi-colors'
-// import isDependencyAdded from './utils/is-dependency-added'
 import tools from './tools'
-import pkg from './utils/pkg'
-import copyFiles from './utils/copy-files'
-import parseDependencies from './utils/parse-dependencies'
 import printEffects from './core/print-effects'
 
 const HAS_YARN = hasYarn()
 const NPM_CLIENT = HAS_YARN ? 'yarn' : 'npm'
 
 run()
-
-// async function merge(tools) {
-//   const files = tools.reduce((all, {files = []}) => [...all, ...files], [])
-
-//   const dependencies = await parseDependencies(
-//     tools
-//       .reduce((all, {dependencies = []}) => all.concat(dependencies), [])
-//       .filter(dependency => !isDependencyAdded(dependency))
-//       .sort()
-//   )
-
-//   const json = tools.reduce(
-//     (all, {package: pkg = {}}) => Object.assign(all, pkg),
-//     {}
-//   )
-
-//   return {
-//     files,
-//     dependencies,
-//     json,
-//   }
-// }
-
-// async function setup(tools) {
-//   const {files, dependencies, json} = await merge(tools)
-//   const newDependencies = Object.keys(dependencies).length !== 0
-//   const newFiles = files.length !== 0
-
-//   await copyFiles(files)
-
-//   pkg.devDependencies = Object.assign(dependencies, pkg.devDependencies)
-//   Object.assign(pkg, json)
-
-//   // eslint-disable-next-line no-underscore-dangle
-//   delete pkg._id
-
-//   await writePkg(pkg)
-
-//   return {
-//     newFiles,
-//     newDependencies,
-//   }
-// }
 
 async function selectTools() {
   const choices = tools.map(({id, name, isInstalled}, index, {length}) => {
@@ -139,9 +89,9 @@ async function run() {
     return false
   }
 
-  const {files, dependencies, package: pkgs} = printEffects(selectedTools)
+  const {files, dependencies, pkg} = printEffects(selectedTools)
 
-  if (files.length !== 0 || dependencies.length !== 0 || pkgs.length !== 0) {
+  if (files.length !== 0 || dependencies.length !== 0 || pkg.length !== 0) {
     const {confirmed} = await prompt({
       type: 'confirm',
       name: 'confirmed',
@@ -159,6 +109,8 @@ async function run() {
   if (dependencies.length !== 0) {
     await installPackages()
   }
+
+  return true
 }
 
 export default {run}

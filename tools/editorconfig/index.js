@@ -3,6 +3,6 @@ module.exports = {
   effects: {
     files: ['.editorconfig'],
     dependencies: [],
-    package: [],
+    'package.json': [],
   },
 }

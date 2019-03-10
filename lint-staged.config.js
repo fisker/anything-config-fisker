@@ -11,7 +11,7 @@
 const CMD_PRETTIER = 'prettier --write'
 const CMD_ESLINT = 'eslint'
 const CMD_ESLINT_FIX = 'eslint --fix'
-const CMD_MARKDOWNLINT = 'markdownlint --ignore CHANGELOG.md'
+const CMD_MARKDOWNLINT = 'markdownlint'
 const CMD_GIT_ADD = 'git add'
 
 const config = {

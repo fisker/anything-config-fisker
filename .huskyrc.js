@@ -1,5 +1,5 @@
 /*!
- * config file for husky
+ * config file for `husky`
  *
  * update: wget https://git.io/fhNpR
  * document: https://git.io/fhNph

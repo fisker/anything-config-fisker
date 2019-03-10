@@ -29,9 +29,8 @@ function rollupConfig(config = {}) {
   return {
     input: `src/${entry}.js`,
     output: {
-      file: `${cli ? 'bin' : 'lib'}/${dist}.js`,
+      file: `lib/${dist}.js`,
       format: FORMAT_CJS,
-      banner: cli ? '#!/usr/bin/env node\n' : '',
     },
     plugins,
     external,
@@ -40,10 +39,7 @@ function rollupConfig(config = {}) {
 
 export default [
   // default
-  rollupConfig('index'),
+  // rollupConfig('index'),
   // cli
-  rollupConfig({
-    entry: 'cli',
-    cli: true,
-  }),
+  rollupConfig('cli'),
 ]

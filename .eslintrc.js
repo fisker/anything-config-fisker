@@ -1,5 +1,5 @@
 /*!
- * config file for eslint
+ * config file for `eslint`
  *
  * update: wget https://git.io/fhNxh
  * document: https://eslint.org/docs/user-guide/configuring
@@ -19,7 +19,9 @@ module.exports = {
   parserOptions: {},
   extends: [xwtec.default],
   settings: {},
-  rules: {},
+  rules: {
+    'no-console': 'off',
+  },
   plugins: [],
   overrides: [],
 }
