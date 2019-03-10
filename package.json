@@ -16,7 +16,7 @@
     "dev": "rollup --config --watch",
     "clean": "rimraf lib",
     "prettier": "prettier **/*.{js,json,yml,md} --write",
-    "lint": "eslint **/*.js --fix",
+    "lint": "eslint src/*.js --fix",
     "build": "npm-run-all lint build:*",
     "build:js": "rollup --config",
     "publish": "np --no-yarn --no-cleanup",
