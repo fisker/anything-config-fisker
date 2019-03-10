@@ -19,7 +19,7 @@
     "lint": "eslint src/*.js --fix",
     "build": "npm-run-all lint build:*",
     "build:js": "rollup --config",
-    "dist": "npm-run-all build:*",
+    "dist": "npm-run-all dist:*",
     "dist:npm": "np --no-yarn --no-cleanup",
     "release": " npm-run-all clean build dist"
   },
