@@ -28,7 +28,7 @@
     "cp-file": "^6.1.0",
     "enquirer": "^2.3.0",
     "execa": "^1.0.0",
-    "has-yarn": "^1.0.0",
+    "has-yarn": "^2.0.0",
     "latest-version": "^4.0.0",
     "read-pkg": "^5.0.0",
     "write-pkg": "^3.2.0"
