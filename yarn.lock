@@ -787,10 +787,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.10.4.tgz#3f5fc4f0f322805f009e00ab35a2ff3d6b778e42"
   integrity sha512-wa09itaLE8L705aXd8F80jnFpxz3Y1/KRHfKsYL2bPc0XF+wEWu8sR9n5bmeu8Ba1N9z2GRNzm/YdHcghLkLKg==
 
-"@xwtec/eslint-config@^3.8.0":
-  version "3.8.0"
-  resolved "http://registry.npm.taobao.org/@xwtec/eslint-config/download/@xwtec/eslint-config-3.8.0.tgz#15646c4e069aea1ae13ea4caedc31b607d5ba706"
-  integrity sha1-FWRsTgaa6hrhPqTK7cMbYH1bpwY=
+"@xwtec/eslint-config@^3.8.1":
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/@xwtec/eslint-config/-/eslint-config-3.8.1.tgz#894234aaf257aba5eb884ffb4fa88abc7b0d18b7"
+  integrity sha512-DC5KJ1+k87aHDQSkRReVxFq+Y/raZei2lGCcbOHXwOQgd6faSnupsFlel+frhfVya9NSXUAhF6qrhcDeUVCCUQ==
   dependencies:
     eslint-config-airbnb-base "^13.1.0"
     eslint-config-prettier "^4.1.0"
