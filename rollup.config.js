@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
 import nodeResolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
@@ -8,7 +6,13 @@ import {terser} from 'rollup-plugin-terser'
 import pkg from './package.json'
 
 const external = Object.keys(pkg.dependencies).concat(['path', 'fs'])
-const plugins = [json(), nodeResolve(), commonjs(), babel(), terser()]
+const plugins = [
+  json(),
+  nodeResolve(),
+  commonjs(),
+  babel(),
+  // terser()
+]
 const FORMAT_CJS = 'cjs'
 
 function rollupConfig(config = {}) {

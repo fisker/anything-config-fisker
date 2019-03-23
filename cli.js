@@ -1,4 +1,5 @@
 #!/usr/bin/env node
 
-// eslint-disable-next-line import/no-unresolved
+process.on('unhandledRejection', () => process.exit(1))
+
 require('./lib/cli').run()
