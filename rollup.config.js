@@ -3,6 +3,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
 import babel from 'rollup-plugin-babel'
 import {terser} from 'rollup-plugin-terser'
+import filesize from 'rollup-plugin-filesize'
 import pkg from './package.json'
 
 const external = Object.keys(pkg.dependencies).concat(['path', 'fs'])
@@ -11,8 +12,10 @@ const plugins = [
   nodeResolve(),
   commonjs(),
   babel(),
-  // terser()
+  // terser(),
+  filesize(),
 ]
+
 const FORMAT_CJS = 'cjs'
 
 function rollupConfig(config = {}) {
