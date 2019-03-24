@@ -944,10 +944,10 @@ atob@^2.1.1:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-babel-plugin-transform-async-to-promises@^0.8.6:
-  version "0.8.6"
-  resolved "https://registry.yarnpkg.com/babel-plugin-transform-async-to-promises/-/babel-plugin-transform-async-to-promises-0.8.6.tgz#da21f782ee9847ccd47e993de3914193b9d2b77c"
-  integrity sha512-bKgtoXHueZZQ+NjWaUj3juhtIU/7aqVUkhUnAWWBgnPVL4oAgKP0AOzz5kYvWzD+GB9ZIA6MKHhqWe0K3rSdqA==
+babel-plugin-transform-async-to-promises@^0.8.7:
+  version "0.8.7"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-async-to-promises/-/babel-plugin-transform-async-to-promises-0.8.7.tgz#8e9d214f54a0fabba4088dda4c8df214d4698429"
+  integrity sha512-znRrOjUy8gDHs6c40dpqVnYrzvCEWyISnLVS1U1ZJvahX2YF19tI8Rq3tI7u7SFe4bE48oceEVY437pYDnRYpQ==
 
 babel-polyfill@6.26.0:
   version "6.26.0"
