@@ -3,23 +3,14 @@ module.exports = {
   effects: {
     files: ['license'],
     dependencies: [],
-    'package.json': [
-      {
-        key: 'license',
-        value: 'MIT',
+    'package.json': {
+      license: 'MIT',
+      author: {
+        name: 'fisker Cheung',
+        email: 'lionkay@gmail.com',
+        url: 'https://www.fiskercheung.com/',
       },
-      {
-        key: 'author',
-        value: {
-          name: 'fisker',
-          email: 'lionkay@gmail.com',
-          url: 'https://www.fiskercheung.com/',
-        },
-      },
-      {
-        key: 'publishConfig.registry',
-        value: 'https://registry.npmjs.org/',
-      },
-    ],
+      'publishConfig.registry': 'https://registry.npmjs.org/',
+    },
   },
 }

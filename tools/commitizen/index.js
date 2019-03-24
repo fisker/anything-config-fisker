@@ -3,8 +3,8 @@ module.exports = {
     files: [],
     dependencies: ['cz-conventional-changelog-emoji'],
     'package.json': {
-      key: 'config.commitizen.path',
-      value: './node_modules/cz-conventional-changelog-emoji',
+      'config.commitizen.path':
+        './node_modules/cz-conventional-changelog-emoji',
     },
   },
 }

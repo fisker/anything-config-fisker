@@ -1,7 +1,7 @@
 /*!
  * config file for `eslint`
  *
- * update: wget https://git.io/fhNxh
+ * update: wget -O .eslintrc.js https://git.io/fhNxh
  * document: https://eslint.org/docs/user-guide/configuring
  */
 
