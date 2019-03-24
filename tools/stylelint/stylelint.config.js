@@ -8,5 +8,5 @@
 /* eslint-config-fisker https://git.io/fjJPX */
 
 module.exports = {
-  extends: ['fisker'],
+  extends: ['stylelint-config-fisker'],
 }
