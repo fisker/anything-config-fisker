@@ -10,6 +10,7 @@ const CMD_PRETTIER = 'prettier --write'
 // eslint-disable-next-line no-unused-vars
 const CMD_ESLINT = 'eslint'
 const CMD_ESLINT_FIX = 'eslint --fix'
+const CMD_STYLELINT_FIX = 'stylelint --fix'
 const CMD_MARKDOWNLINT = 'markdownlint'
 const CMD_GIT_ADD = 'git add'
 
@@ -20,10 +21,10 @@ const config = {
 
   // js files
   // eslint then prettier
-  'js,jsx,mjs': [CMD_ESLINT_FIX, CMD_PRETTIER],
+  'js,jsx,mjs': CMD_ESLINT_FIX,
 
   // vue files
-  // eslint then prettier
+  // eslint
   vue: [CMD_ESLINT_FIX, CMD_PRETTIER],
 
   // typescript files
@@ -31,9 +32,8 @@ const config = {
   // 'ts,tsx': [CMD_ESLINT_FIX, CMD_PRETTIER],
 
   // css files
-  // TODO: stylelint
-  // prettier
-  'scss,css,less': CMD_PRETTIER,
+  // stylelint
+  'scss,css,less': CMD_STYLELINT_FIX,
 
   // html files
   // TODO: htmlhint
