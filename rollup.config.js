@@ -25,7 +25,7 @@ function rollupConfig(config = {}) {
     }
   }
 
-  const {entry, dist = config.entry, cli} = config
+  const {entry, dist = config.entry} = config
 
   return {
     input: `src/${entry}.js`,
