@@ -5,17 +5,10 @@
  * document: https://eslint.org/docs/user-guide/configuring
  */
 
-/* @xwtec/eslint-config https://git.io/fhNpT */
-const xwtec = (pkg => ({
-  default: pkg,
-  legacy: `${pkg}/legacy`,
-  vue: `${pkg}/vue`,
-}))('@xwtec/eslint-config')
-
 module.exports = {
   root: true,
   parserOptions: {},
-  extends: [xwtec.default],
+  extends: ['fisker'],
   settings: {},
   rules: {
     'no-console': 'off',

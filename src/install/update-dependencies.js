@@ -1,5 +1,5 @@
 import latestVersion from 'latest-version'
-import isExists from '../tools/is-exists'
+import notExists from '../tools/not-exists'
 import updatePackage from './update-package'
 
 async function updateDependency({type, name}) {
@@ -16,7 +16,7 @@ async function updateDependency({type, name}) {
 }
 
 function updateDependencies(dependencies) {
-  return dependencies.filter(isExists).map(updateDependency)
+  return dependencies.filter(notExists).map(updateDependency)
 }
 
 export default updateDependencies

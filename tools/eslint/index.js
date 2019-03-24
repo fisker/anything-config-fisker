@@ -8,7 +8,7 @@ module.exports = {
         dest: '.eslintrc.js',
       },
     ],
-    dependencies: ['eslint', '@xwtec/eslint-config', 'prettier'],
+    dependencies: ['eslint', 'eslint-config-fisker', 'prettier'],
     'package.json': [],
   },
 }

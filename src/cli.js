@@ -2,8 +2,10 @@ import execa from 'execa'
 import hasYarn from 'has-yarn'
 import {prompt} from 'enquirer'
 import colors from 'ansi-colors'
+import writePkg from 'write-pkg'
 import tools from './tools'
 import printEffects from './core/print-effects'
+import projectPackage from './utils/pkg'
 
 const HAS_YARN = hasYarn()
 const NPM_CLIENT = HAS_YARN ? 'yarn' : 'npm'
@@ -105,6 +107,7 @@ async function run() {
   }
 
   await Promise.all(selectedTools.map(tool => tool.install(tool)))
+  await writePkg(projectPackage)
 
   if (dependencies.length !== 0) {
     await installPackages()
