@@ -1,14 +1,7 @@
 module.exports = {
-  name: 'ESLint',
   effects: {
-    files: [
-      '.eslintignore',
-      {
-        source: 'eslint-run-commands.js',
-        dest: '.eslintrc.js',
-      },
-    ],
-    dependencies: ['eslint', 'eslint-config-fisker', 'prettier'],
+    files: ['.stylelintignore', 'stylelint.config.js'],
+    dependencies: ['stylelint', 'stylelint-config-fisker', 'prettier'],
     'package.json': [],
   },
 }
