@@ -72,7 +72,7 @@ async function installPackages() {
     type: 'confirm',
     name: 'confirmed',
     message: `run ${NPM_CLIENT} to install?`,
-    initial: true,
+    initial: false,
   })
 
   if (!confirmed) {

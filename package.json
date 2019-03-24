@@ -7,12 +7,6 @@
     "fisker-config": "cli.js"
   },
   "files": ["cli.js", "lib", "tools"],
-  "author": {
-    "name": "fisker",
-    "email": "lionkay@gmail.com",
-    "url": "https://www.fiskercheung.com/"
-  },
-  "license": "MIT",
   "scripts": {
     "dev": "rollup --config --watch",
     "clean": "rimraf lib",
@@ -26,6 +20,7 @@
   },
   "dependencies": {
     "ansi-colors": "^3.2.4",
+    "babel-plugin-transform-async-to-promises": "^0.8.6",
     "cp-file": "^6.1.0",
     "enquirer": "^2.3.0",
     "execa": "^1.0.0",
@@ -57,9 +52,6 @@
     "rollup-plugin-terser": "^4.0.4",
     "standard-version": "^5.0.2"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
   "bugs": {
     "url": "https://github.com/fisker/anthing-config-fisker/issues"
   },
@@ -68,5 +60,14 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog-emoji"
     }
+  },
+  "license": "MIT",
+  "author": {
+    "name": "fisker Cheung",
+    "email": "lionkay@gmail.com",
+    "url": "https://www.fiskercheung.com/"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }

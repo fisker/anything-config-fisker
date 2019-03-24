@@ -1,16 +1,16 @@
 module.exports = {
-  plugins: [],
   presets: [
     [
       '@babel/preset-env',
       {
         targets: {
-          node: '0.8',
+          node: '6',
         },
-        exclude: ['transform-typeof-symbol', 'transform-regenerator'],
+        exclude: ['transform-typeof-symbol', 'transform-async-to-generator'],
         useBuiltIns: false,
         modules: false,
       },
     ],
   ],
+  plugins: ['babel-plugin-transform-async-to-promises'],
 }

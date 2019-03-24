@@ -12,12 +12,15 @@ function setValue(obj, path, value) {
 
   for (let i = 0; i < length; i += 1) {
     const prop = seg[i]
-    if (!isObject(obj[prop])) {
-      obj[prop] = {}
-    }
 
     if (i === length - 1) {
       obj[prop] = value
+
+      return root
+    }
+
+    if (!isObject(obj[prop])) {
+      obj[prop] = {}
     }
 
     obj = obj[prop]

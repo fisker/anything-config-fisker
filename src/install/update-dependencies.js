@@ -7,7 +7,7 @@ async function updateDependency({type, name}) {
   const version = await latestVersion(name)
   const value = version ? `^${version}` : 'latest'
 
-  return updatePackage([
+  updatePackage([
     {
       key,
       value,
@@ -15,8 +15,8 @@ async function updateDependency({type, name}) {
   ])
 }
 
-function updateDependencies(dependencies) {
-  return dependencies.filter(notExists).map(updateDependency)
+async function updateDependencies(dependencies) {
+  await Promise.all(dependencies.filter(notExists).map(updateDependency))
 }
 
 export default updateDependencies
