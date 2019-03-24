@@ -1,6 +1,12 @@
 module.exports = {
   effects: {
-    files: ['.prettierignore', 'prettier.config.js'],
+    files: [
+      '.prettierignore',
+      {
+        source: 'prettier-run-commands.js',
+        dest: 'prettier.config.js',
+      },
+    ],
     dependencies: ['prettier'],
     'package.json': [],
   },

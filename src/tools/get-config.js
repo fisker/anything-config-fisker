@@ -1,7 +1,7 @@
 import {join} from 'path'
 import {TOOLS_DIR} from '../constants'
 import effectsParser from '../parser/effects'
-import effectDector from './has-effects'
+import effectDetector from './has-effects'
 import defaultIsInstalled from './is-installed'
 import defaultInstall from '../install'
 import exists from './is-exists'
@@ -22,7 +22,7 @@ function getToolConfig(dirName) {
     effects,
     helpers
   )
-  const hasEffects = effectDector(effects)
+  const hasEffects = effectDetector(effects)
 
   return {
     id: dir,

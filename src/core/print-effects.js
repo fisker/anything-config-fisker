@@ -54,17 +54,17 @@ function printEffects(tools) {
         `${pkg.length} change${pkg.length > 1 ? 's' : ''} in package.json`
       )
     )
-    for (const {key, segments, orignal, value, exists, equal} of pkg) {
+    for (const {key, segments, original, value, exists, equal} of pkg) {
       console.log(
         ` - ${segments.join('.')}${exists ? colors.red(' (overwrite)') : ''}`
       )
 
       if (!equal) {
-        if (orignal) {
-          console.log(`    from: ${colors.gray(JSON.stringify(orignal))}`)
-          console.log(`      to: ${colors.gray(JSON.stringify(orignal))}`)
+        if (original) {
+          console.log(`    from: ${colors.gray(JSON.stringify(original))}`)
+          console.log(`      to: ${colors.gray(JSON.stringify(original))}`)
         } else {
-          console.log(`    ${colors.gray(JSON.stringify(orignal))}`)
+          console.log(`    ${colors.gray(JSON.stringify(original))}`)
         }
       }
     }

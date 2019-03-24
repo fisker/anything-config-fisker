@@ -6,18 +6,18 @@ import getValue from '../utils/get-object-value-by-path'
 function packageParser({key, value}) {
   const segments = getPathSegments(key)
   const exists = hasProp(pkg, segments)
-  const orignal = getValue(pkg, segments)
+  const original = getValue(pkg, segments)
 
   key = segments.map(seg => `[${JSON.stringify(seg)}]`).join('')
 
-  const equal = JSON.stringify(orignal) === JSON.stringify(value)
+  const equal = JSON.stringify(original) === JSON.stringify(value)
 
   return {
     key,
     segments,
     value,
     exists,
-    orignal,
+    original,
     equal,
   }
 }
