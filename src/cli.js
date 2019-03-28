@@ -1,14 +1,19 @@
 import execa from 'execa'
-import hasYarn from 'has-yarn'
+// import hasYarn from 'has-yarn'
 import {prompt} from 'enquirer'
 import colors from 'ansi-colors'
 import writePkg from 'write-pkg'
+import updateNotifier from 'update-notifier'
 import tools from './tools'
 import printEffects from './core/print-effects'
 import projectPackage from './utils/pkg'
+import pkg from '../package'
 
-const HAS_YARN = hasYarn()
-const NPM_CLIENT = HAS_YARN ? 'yarn' : 'npm'
+updateNotifier({pkg}).notify()
+
+// const HAS_YARN = hasYarn()
+// const NPM_CLIENT = HAS_YARN ? 'yarn' : 'npm'
+const NPM_CLIENT = 'yarn'
 
 run()
 

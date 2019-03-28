@@ -27,6 +27,7 @@
     "has-yarn": "^2.0.0",
     "latest-version": "^5.0.0",
     "read-pkg": "^5.0.0",
+    "update-notifier": "^2.5.0",
     "write-pkg": "^3.2.0"
   },
   "devDependencies": {
