@@ -1,7 +1,10 @@
-import pkg from '../utils/pkg'
+import package_ from '../utils/pkg'
 import hasOwn from '../utils/has-own'
 
-const {dependencies = {}, devDependencies: developmentDependencies = {}} = pkg
+const {
+  dependencies = {},
+  devDependencies: developmentDependencies = {},
+} = package_
 
 const packageDependencies = {
   any: {

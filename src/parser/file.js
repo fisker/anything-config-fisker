@@ -1,7 +1,7 @@
 import {join, relative} from 'path'
 import {existsSync} from 'fs'
 import {CWD} from '../constants'
-import isInDir from '../utils/is-in-dir'
+import isInDirectory from '../utils/is-in-dir'
 
 function fileParser(file, directory) {
   if (typeof file === 'string') {
@@ -11,13 +11,13 @@ function fileParser(file, directory) {
   let {source, dest: destination = source} = file
 
   source = join(directory, source)
-  if (!isInDir(directory, source) || !existsSync(source)) {
+  if (!isInDirectory(directory, source) || !existsSync(source)) {
     return null
   }
 
   destination = join(CWD, destination)
 
-  if (!isInDir(CWD, destination)) {
+  if (!isInDirectory(CWD, destination)) {
     return null
   }
 

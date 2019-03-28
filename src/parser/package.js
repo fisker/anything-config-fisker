@@ -1,12 +1,12 @@
-import pkg from '../utils/pkg'
-import hasProp from '../utils/is-object-has-path'
+import package_ from '../utils/pkg'
+import hasProperty from '../utils/is-object-has-path'
 import getPathSegments from '../utils/get-path-segments'
 import getValue from '../utils/get-object-value-by-path'
 
 function packageParser({key, value}) {
   const segments = getPathSegments(key)
-  const exists = hasProp(pkg, segments)
-  const original = getValue(pkg, segments)
+  const exists = hasProperty(package_, segments)
+  const original = getValue(package_, segments)
 
   key = segments.map(seg => `[${JSON.stringify(seg)}]`).join('')
 
