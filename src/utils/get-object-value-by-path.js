@@ -1,8 +1,8 @@
 import getPathSegments from './get-path-segments'
 import isObject from './is-object'
 
-function getValue(obj, path) {
-  if (!isObject(obj)) {
+function getValue(object, path) {
+  if (!isObject(object)) {
     return null
   }
 
@@ -10,20 +10,20 @@ function getValue(obj, path) {
   const {length} = seg
 
   for (let i = 0; i < length; i += 1) {
-    const prop = seg[i]
+    const property = seg[i]
 
     if (i === length - 1) {
-      return obj[prop]
+      return object[property]
     }
 
-    if (!isObject(obj[prop])) {
+    if (!isObject(object[property])) {
       return null
     }
 
-    obj = obj[prop]
+    object = object[property]
   }
 
-  return obj
+  return object
 }
 
 export default getValue

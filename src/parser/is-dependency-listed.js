@@ -1,19 +1,19 @@
 import pkg from '../utils/pkg'
 import hasOwn from '../utils/has-own'
 
-const {dependencies = {}, devDependencies = {}} = pkg
+const {dependencies = {}, devDependencies: developmentDependencies = {}} = pkg
 
-const pkgDependencies = {
+const packageDependencies = {
   any: {
     ...dependencies,
-    ...devDependencies,
+    ...developmentDependencies,
   },
   dependencies,
-  devDependencies,
+  devDependencies: developmentDependencies,
 }
 
 function isDependencyListed(dependency, type) {
-  return hasOwn.call(pkgDependencies[type || 'any'], dependency)
+  return hasOwn.call(packageDependencies[type || 'any'], dependency)
 }
 
 export default isDependencyListed

@@ -1,8 +1,8 @@
 import getPathSegments from './get-path-segments'
 import isObject from './is-object'
 
-function hasProp(obj, path) {
-  if (!isObject(obj)) {
+function hasProperty(object, path) {
+  if (!isObject(object)) {
     return false
   }
 
@@ -10,19 +10,19 @@ function hasProp(obj, path) {
   const {length} = seg
 
   for (let i = 0; i < length; i += 1) {
-    if (!isObject(obj)) {
+    if (!isObject(object)) {
       return false
     }
 
-    const prop = seg[i]
-    if (!(prop in obj)) {
+    const property = seg[i]
+    if (!(property in object)) {
       return false
     }
 
-    obj = obj[prop]
+    object = object[property]
   }
 
   return true
 }
 
-export default hasProp
+export default hasProperty

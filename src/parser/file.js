@@ -3,32 +3,32 @@ import {existsSync} from 'fs'
 import {CWD} from '../constants'
 import isInDir from '../utils/is-in-dir'
 
-function fileParser(file, dir) {
+function fileParser(file, directory) {
   if (typeof file === 'string') {
     file = {source: file}
   }
 
-  let {source, dest = source} = file
+  let {source, dest: destination = source} = file
 
-  source = join(dir, source)
-  if (!isInDir(dir, source) || !existsSync(source)) {
+  source = join(directory, source)
+  if (!isInDir(directory, source) || !existsSync(source)) {
     return null
   }
 
-  dest = join(CWD, dest)
+  destination = join(CWD, destination)
 
-  if (!isInDir(CWD, dest)) {
+  if (!isInDir(CWD, destination)) {
     return null
   }
 
-  const exists = existsSync(dest)
+  const exists = existsSync(destination)
 
   return {
-    file: relative(dir, source),
+    file: relative(directory, source),
     source,
-    sourceRelative: relative(dir, source),
-    dest,
-    destRelative: relative(CWD, dest),
+    sourceRelative: relative(directory, source),
+    dest: destination,
+    destRelative: relative(CWD, destination),
     exists,
   }
 }

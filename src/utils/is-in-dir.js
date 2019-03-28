@@ -1,7 +1,7 @@
 import {normalize} from 'path'
 
-function isInDir(dir, file) {
-  return normalize(file).startsWith(normalize(dir))
+function isInDirectory(directory, file) {
+  return normalize(file).startsWith(normalize(directory))
 }
 
-export default isInDir
+export default isInDirectory

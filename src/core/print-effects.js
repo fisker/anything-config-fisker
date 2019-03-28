@@ -17,7 +17,7 @@ function printEffects(tools) {
   const dependencies = mergeEffectsByKey(tools, 'dependencies').sort(
     sortBy('name')
   )
-  const pkg = mergeEffectsByKey(tools, 'pkg')
+  const package_ = mergeEffectsByKey(tools, 'pkg')
     .filter(notEqualFilter)
     .sort(sortBy('key'))
 
@@ -48,13 +48,15 @@ function printEffects(tools) {
     console.log('')
   }
 
-  if (pkg.length !== 0) {
+  if (package_.length !== 0) {
     console.log(
       colors.yellowBright(
-        `${pkg.length} change${pkg.length > 1 ? 's' : ''} in package.json`
+        `${package_.length} change${
+          package_.length > 1 ? 's' : ''
+        } in package.json`
       )
     )
-    for (const {key, segments, original, value, exists, equal} of pkg) {
+    for (const {key, segments, original, value, exists, equal} of package_) {
       console.log(
         ` - ${segments.join('.')}${exists ? colors.red(' (overwrite)') : ''}`
       )
@@ -74,7 +76,7 @@ function printEffects(tools) {
   return {
     files,
     dependencies,
-    pkg,
+    pkg: package_,
   }
 }
 

@@ -1,11 +1,11 @@
 const {flat: nativeFlat} = Array.prototype
 
-function flatWithNative(arr) {
-  return arr.flat()
+function flatWithNative(array) {
+  return array.flat()
 }
 
-function flat(arr) {
-  return arr.reduce(
+function flat(array) {
+  return array.reduce(
     (acc, current) => [
       ...acc,
       ...(Array.isArray(current) ? current : [current]),

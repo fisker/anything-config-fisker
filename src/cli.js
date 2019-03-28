@@ -79,8 +79,8 @@ async function installPackages() {
     return
   }
 
-  const args = NPM_CLIENT === 'yarn' ? [] : ['install']
-  await execa(NPM_CLIENT, args).stdout.pipe(process.stdout)
+  const arguments_ = NPM_CLIENT === 'yarn' ? [] : ['install']
+  await execa(NPM_CLIENT, arguments_).stdout.pipe(process.stdout)
 }
 
 async function run() {

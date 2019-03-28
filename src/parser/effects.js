@@ -6,38 +6,38 @@ function toArray(x) {
   return Array.isArray(x) ? x : [x]
 }
 
-function pkgToArray(pkg) {
-  return Array.isArray(pkg)
-    ? pkg
-    : Object.keys(pkg).reduce(
+function packageToArray(package_) {
+  return Array.isArray(package_)
+    ? package_
+    : Object.keys(package_).reduce(
         (all, key) => [
           ...all,
           {
             key,
-            value: pkg[key],
+            value: package_[key],
           },
         ],
         []
       )
 }
 
-function effectsParser(effects, dir) {
-  let {files = [], dependencies = [], 'package.json': pkg = []} = effects
+function effectsParser(effects, directory) {
+  let {files = [], dependencies = [], 'package.json': package_ = []} = effects
 
   files = toArray(files)
-    .map(file => fileParser(file, dir))
+    .map(file => fileParser(file, directory))
     .filter(Boolean)
   dependencies = toArray(dependencies)
     .map(dependencyParser)
     .filter(Boolean)
-  pkg = pkgToArray(pkg)
+  package_ = packageToArray(package_)
     .map(packageParser)
     .filter(Boolean)
 
   return {
     files,
     dependencies,
-    pkg,
+    pkg: package_,
   }
 }
 

@@ -21,10 +21,10 @@ const config = {
 
   // js files
   // eslint then prettier
-  'js,jsx,mjs': CMD_ESLINT_FIX,
+  'js,jsx,mjs': [CMD_ESLINT_FIX],
 
   // vue files
-  // eslint
+  // eslint then prettier
   vue: [CMD_ESLINT_FIX, CMD_PRETTIER],
 
   // typescript files
@@ -32,8 +32,8 @@ const config = {
   // 'ts,tsx': [CMD_ESLINT_FIX, CMD_PRETTIER],
 
   // css files
-  // stylelint
-  'scss,css,less': CMD_STYLELINT_FIX,
+  // prettier
+  'scss,css,less': [CMD_STYLELINT_FIX],
 
   // html files
   // TODO: htmlhint
@@ -93,11 +93,11 @@ function reduceByGlob(config, {exts, cmds}) {
 function groupByGlob(grouped) {
   return Object.keys(grouped)
     .map(key => {
-      const [cmds, ...exts] = grouped[key]
+      const [cmds, ...extensions] = grouped[key]
 
       return {
         cmds,
-        exts,
+        exts: extensions,
       }
     })
     .reduce(reduceByGlob, {})

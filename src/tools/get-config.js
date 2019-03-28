@@ -10,13 +10,13 @@ const helpers = {
   exists,
 }
 
-function getToolConfig(dirName) {
-  const dir = join(TOOLS_DIR, dirName)
-  const config = require(dir)
+function getToolConfig(directoryName) {
+  const directory = join(TOOLS_DIR, directoryName)
+  const config = require(directory)
 
-  const {name = dirName, install = defaultInstall} = config
+  const {name = directoryName, install = defaultInstall} = config
 
-  const effects = effectsParser(config.effects, dir)
+  const effects = effectsParser(config.effects, directory)
 
   const isInstalled = (config.isInstalled || defaultIsInstalled)(
     effects,
@@ -25,10 +25,10 @@ function getToolConfig(dirName) {
   const hasEffects = effectDetector(effects)
 
   return {
-    id: dir,
+    id: directory,
     name,
-    dirName,
-    dir,
+    dirName: directoryName,
+    dir: directory,
     effects,
     isInstalled,
     install,

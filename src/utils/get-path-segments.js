@@ -8,13 +8,13 @@ function getPathSegments(keys) {
 
   const parts = []
 
-  let res
-  while ((res = re.exec(keys))) {
-    let prop = res[2]
-    if (isUndefined(prop)) {
-      prop = res[3]
+  let result
+  while ((result = re.exec(keys))) {
+    let property = result[2]
+    if (isUndefined(property)) {
+      property = result[3]
     }
-    parts.push(prop)
+    parts.push(property)
   }
 
   return parts

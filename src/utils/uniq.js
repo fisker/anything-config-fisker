@@ -1,5 +1,5 @@
-function uniq(arr) {
-  return [...new Set(arr)]
+function uniq(array) {
+  return [...new Set(array)]
 }
 
 export default uniq

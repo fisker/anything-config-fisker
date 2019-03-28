@@ -12,16 +12,7 @@ module.exports = {
   parserOptions: {},
   extends: ['fisker'],
   settings: {},
-  rules: {
-    'no-console': 'off',
-  },
+  rules: {},
   plugins: [],
-  overrides: [
-    {
-      files: ['cli.js'],
-      rules: {
-        'import/no-extraneous-dependencies': 'off',
-      },
-    },
-  ],
+  overrides: [],
 }

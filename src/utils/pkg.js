@@ -1,5 +1,5 @@
-import {sync as readPkg} from 'read-pkg'
+import {sync as readPackage} from 'read-pkg'
 
-const pkg = readPkg({normalize: false})
+const package_ = readPackage({normalize: false})
 
-export default pkg
+export default package_
