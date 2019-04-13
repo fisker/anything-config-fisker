@@ -10,13 +10,15 @@
   "scripts": {
     "dev": "rollup --config --watch",
     "clean": "rimraf lib",
-    "prettier": "prettier **/*.{js,json,yml,md} --write",
-    "lint": "eslint {src,tools}/**/*.js --fix",
-    "build": "npm-run-all lint build:*",
+    "prettier": "prettier **/*.{css,scss,html,js,json,md,less,vue,yaml,ts} --write",
+    "lint": "run-p lint:*",
+    "lint:eslint": "eslint **/*.{js,mjs,vue} --fix",
+    "lint:markdown": "markdownlint **/*.md --ignore \"node_modules/**\"",
+    "build": "run-p build:*",
     "build:js": "rollup --config",
-    "prerelease": "npm-run-all clean build",
-    "release": "npm-run-all release:*",
-    "release:npm": "np --no-yarn --no-cleanup"
+    "release": "run-s clean lint prettier build dist",
+    "dist": "run-p dist:*",
+    "dist:npm": "np --yolo --no-yarn"
   },
   "dependencies": {
     "ansi-colors": "^3.2.4",
@@ -37,7 +39,7 @@
     "@commitlint/config-conventional": "^7.5.0",
     "cz-conventional-changelog-emoji": "^0.1.0",
     "eslint": "^5.16.0",
-    "eslint-config-fisker": "^4.3.3",
+    "eslint-config-fisker": "^4.3.5",
     "husky": "^1.3.1",
     "lint-staged": "^8.1.5",
     "markdownlint-cli": "^0.15.0",

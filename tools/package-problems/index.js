@@ -11,6 +11,7 @@ module.exports = {
         url: 'https://www.fiskercheung.com/',
       },
       'publishConfig.registry': 'https://registry.npmjs.org/',
+      'scripts["dist:npm"]': 'np --yolo --no-yarn',
     },
   },
 }

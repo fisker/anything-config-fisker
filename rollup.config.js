@@ -4,9 +4,9 @@ import json from 'rollup-plugin-json'
 import babel from 'rollup-plugin-babel'
 // import {terser} from 'rollup-plugin-terser'
 import filesize from 'rollup-plugin-filesize'
-import pkg from './package.json'
+import package_ from './package.json'
 
-const external = Object.keys(pkg.dependencies).concat(['path', 'fs'])
+const external = Object.keys(package_.dependencies).concat(['path', 'fs'])
 const plugins = [
   json(),
   nodeResolve(),

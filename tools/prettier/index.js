@@ -8,6 +8,9 @@ module.exports = {
       },
     ],
     dependencies: ['prettier', 'prettier-config-fisker'],
-    'package.json': [],
+    'package.json': {
+      'scripts.prettier':
+        'prettier **/*.{css,scss,html,js,json,md,less,vue,yaml,ts} --write',
+    },
   },
 }

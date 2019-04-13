@@ -12,9 +12,7 @@ module.exports = {
   parserOptions: {},
   extends: ['fisker'],
   settings: {},
-  rules: {
-    'import/no-extraneous-dependencies': 'off',
-  },
+  rules: {},
   plugins: [],
   overrides: [],
 }
