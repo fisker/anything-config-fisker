@@ -7,7 +7,7 @@ module.exports = {
         dest: 'prettier.config.js',
       },
     ],
-    dependencies: ['prettier'],
+    dependencies: ['prettier', 'prettier-config-fisker'],
     'package.json': [],
   },
 }
