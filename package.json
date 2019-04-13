@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "rollup --config --watch",
     "clean": "rimraf lib",
-    "prettier": "prettier **/*.{css,scss,html,js,json,md,less,vue,yaml,ts} --write",
+    "prettier": "prettier **/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml} --write",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint **/*.{js,mjs,vue} --fix",
     "lint:markdown": "markdownlint **/*.md --ignore \"node_modules/**\"",
