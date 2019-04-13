@@ -1,3 +1,10 @@
+// const extensions = require('./prettier-run-commands')
+//   .overrides.map(({files}) => files)
+//   .map(glob => glob.match(/\*\.{?(.*?)(?:}|)$/)[1])
+//   .join(',')
+
+const extensions = 'css,html,js,json,less,md,scss,ts,vue,yaml,yml'
+
 module.exports = {
   effects: {
     files: [
@@ -9,8 +16,7 @@ module.exports = {
     ],
     dependencies: ['prettier', 'prettier-config-fisker'],
     'package.json': {
-      'scripts.prettier':
-        'prettier **/*.{css,scss,html,js,json,md,less,vue,yaml,ts} --write',
+      'scripts.prettier': `prettier **/*.{${extensions}} --write`,
     },
   },
 }
