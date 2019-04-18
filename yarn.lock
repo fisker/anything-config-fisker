@@ -758,8 +758,8 @@
 
 "@fisker/eslint-config@^1.0.4":
   version "1.0.4"
-  resolved "http://registry.npm.taobao.org/@fisker/eslint-config/download/@fisker/eslint-config-1.0.4.tgz#aad11dc759babf53afeeb1bf06ddb904c544d50d"
-  integrity sha1-qtEdx1m6v1Ov7rG/Bt25BMVE1Q0=
+  resolved "https://registry.yarnpkg.com/@fisker/eslint-config/-/eslint-config-1.0.4.tgz#aad11dc759babf53afeeb1bf06ddb904c544d50d"
+  integrity sha512-uMcnt/rzG4AFfrleeBMzFFGHhhDlMd7xIxOCfl4Urj9IPbNXcQF+k9g9AQSoG48JebBz1bcKPxEd5xcwTasw9w==
   dependencies:
     eslint-config-airbnb-base "^13.1.0"
     eslint-config-prettier "^4.1.0"
