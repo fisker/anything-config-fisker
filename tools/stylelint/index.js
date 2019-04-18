@@ -1,7 +1,7 @@
 module.exports = {
   effects: {
     files: ['.stylelintignore', 'stylelint.config.js'],
-    dependencies: ['stylelint', 'stylelint-config-fisker', 'prettier'],
+    dependencies: ['stylelint', '@fisker/stylelint-config', 'prettier'],
     'package.json': {
       'scripts["lint:style"]': 'stylelint **/*.{css,scss,less} --fix',
     },

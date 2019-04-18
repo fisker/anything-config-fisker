@@ -4,7 +4,7 @@ module.exports = {
     dependencies: ['markdownlint-cli'],
     'package.json': {
       'scripts["lint:markdown"]':
-        'markdownlint **/*.md --ignore "node_modules/**"',
+        'markdownlint **/*.md --ignore "**/node_modules/**"',
     },
   },
 }
