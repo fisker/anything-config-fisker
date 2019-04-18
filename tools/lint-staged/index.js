@@ -1,7 +1,7 @@
 module.exports = {
   effects: {
     files: ['lint-staged.config.js'],
-    dependencies: ['husky'],
+    dependencies: ['lint-staged', '@fisker/lint-staged-config'],
     'package.json': [],
   },
 }

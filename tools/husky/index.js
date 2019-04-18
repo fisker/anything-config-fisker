@@ -1,7 +1,7 @@
 module.exports = {
   effects: {
     files: ['.huskyrc.js'],
-    dependencies: ['lint-staged'],
+    dependencies: ['husky'],
     'package.json': [],
   },
 }

@@ -756,7 +756,7 @@
   dependencies:
     find-up "^2.1.0"
 
-"@fisker/eslint-config@^4.5.0":
+"@fisker/eslint-config@^1.0.4":
   version "1.0.4"
   resolved "http://registry.npm.taobao.org/@fisker/eslint-config/download/@fisker/eslint-config-1.0.4.tgz#aad11dc759babf53afeeb1bf06ddb904c544d50d"
   integrity sha1-qtEdx1m6v1Ov7rG/Bt25BMVE1Q0=
@@ -771,10 +771,15 @@
     eslint-plugin-promise "^4.1.1"
     eslint-plugin-unicorn "^8.0.2"
 
-"@fisker/prettier-config@^1.0.3":
-  version "1.0.4"
-  resolved "http://registry.npm.taobao.org/@fisker/prettier-config/download/@fisker/prettier-config-1.0.4.tgz#e1548f35702ed4f4df5a7635a15fcadb5e3ac257"
-  integrity sha1-4VSPNXAu1PTfWnY1oV/K2146wlc=
+"@fisker/lint-staged-config@^1.0.0":
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/@fisker/lint-staged-config/download/@fisker/lint-staged-config-1.0.0.tgz#e114f199aed16270d28b26eb15ac7435f6784448"
+  integrity sha1-4RTxma7RYnDSiybrFax0NfZ4REg=
+
+"@fisker/prettier-config@^1.0.5":
+  version "1.0.5"
+  resolved "http://registry.npm.taobao.org/@fisker/prettier-config/download/@fisker/prettier-config-1.0.5.tgz#defa63029d57b67fbd2a2697bb782062ca6878bc"
+  integrity sha1-3vpjAp1Xtn+9KiaXu3ggYspoeLw=
 
 "@marionebl/sander@^0.6.0":
   version "0.6.1"
