@@ -21,5 +21,8 @@ dist/**
 # fixtures
 **/fixtures/**
 
+# test
+coverage/**
+
 # project glob
 
