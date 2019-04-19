@@ -763,10 +763,10 @@
   dependencies:
     "@commitlint/config-conventional" "^7.5.0"
 
-"@fisker/eslint-config@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@fisker/eslint-config/-/eslint-config-1.0.4.tgz#aad11dc759babf53afeeb1bf06ddb904c544d50d"
-  integrity sha512-uMcnt/rzG4AFfrleeBMzFFGHhhDlMd7xIxOCfl4Urj9IPbNXcQF+k9g9AQSoG48JebBz1bcKPxEd5xcwTasw9w==
+"@fisker/eslint-config@^1.0.4", "@fisker/eslint-config@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@fisker/eslint-config/-/eslint-config-1.0.5.tgz#e3307eaf3c700f05ad53c6ad37667ee9db220f73"
+  integrity sha512-ZTRZdavpa2ACF1q5uwPOyoJA1MEacXtDvUpBy2UlAgNTVFP0vDihwYfs6jxfK4N+cktvWXTa+zjj3k5H4aW0dg==
   dependencies:
     eslint-config-airbnb-base "^13.1.0"
     eslint-config-prettier "^4.1.0"
@@ -778,10 +778,12 @@
     eslint-plugin-promise "^4.1.1"
     eslint-plugin-unicorn "^8.0.2"
 
-"@fisker/lint-staged-config@^1.0.0":
-  version "1.0.0"
-  resolved "http://registry.npm.taobao.org/@fisker/lint-staged-config/download/@fisker/lint-staged-config-1.0.0.tgz#e114f199aed16270d28b26eb15ac7435f6784448"
-  integrity sha1-4RTxma7RYnDSiybrFax0NfZ4REg=
+"@fisker/lint-staged-config@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@fisker/lint-staged-config/-/lint-staged-config-1.0.1.tgz#957e240ba4cb77402adc63cf94cf76d689bba67a"
+  integrity sha512-t+wGzIQZqHTgwrhmHKIzUyUWNHnUvRMw3bzRHWFppvC5LFv6YTg9M2UXMw+zo5EmNplXq1fAZXUKogYC2Znb5Q==
+  dependencies:
+    "@fisker/eslint-config" "^1.0.5"
 
 "@fisker/prettier-config@^1.0.5":
   version "1.0.5"
