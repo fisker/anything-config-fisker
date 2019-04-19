@@ -763,10 +763,10 @@
   dependencies:
     "@commitlint/config-conventional" "^7.5.0"
 
-"@fisker/eslint-config@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@fisker/eslint-config/-/eslint-config-1.0.4.tgz#aad11dc759babf53afeeb1bf06ddb904c544d50d"
-  integrity sha512-uMcnt/rzG4AFfrleeBMzFFGHhhDlMd7xIxOCfl4Urj9IPbNXcQF+k9g9AQSoG48JebBz1bcKPxEd5xcwTasw9w==
+"@fisker/eslint-config@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@fisker/eslint-config/-/eslint-config-1.0.5.tgz#e3307eaf3c700f05ad53c6ad37667ee9db220f73"
+  integrity sha512-ZTRZdavpa2ACF1q5uwPOyoJA1MEacXtDvUpBy2UlAgNTVFP0vDihwYfs6jxfK4N+cktvWXTa+zjj3k5H4aW0dg==
   dependencies:
     eslint-config-airbnb-base "^13.1.0"
     eslint-config-prettier "^4.1.0"
