@@ -9,6 +9,7 @@
 
 module.exports = {
   root: true,
+  env: {},
   parserOptions: {},
   extends: ['@fisker'],
   settings: {},
@@ -16,5 +17,6 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
   },
   plugins: [],
+  globals: {},
   overrides: [],
 }
