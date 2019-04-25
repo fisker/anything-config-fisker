@@ -87,4 +87,3 @@ typings/
 .dynamodb/
 
 # project ignore files
-lib/
