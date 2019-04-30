@@ -13,6 +13,7 @@ module.exports = {
       'publishConfig.registry': 'https://registry.npmjs.org/',
       'publishConfig.access': 'public',
       'scripts["dist:npm"]': 'np --yolo --no-yarn',
+      sideEffects: false,
     },
   },
 }
