@@ -792,17 +792,18 @@
   dependencies:
     find-up "^2.1.0"
 
-"@fisker/commitlint-config@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@fisker/commitlint-config/-/commitlint-config-1.0.5.tgz#656f9588db3075ff00d07f472774ce56abbb9d56"
-  integrity sha512-XgbIQMT6sH8VMjQJfwxYPAB+mxquTp2Ok1QeDUpBMqjzWUuzQ/7zwKjAbGv4zT7kok1InMSrm+oAL99uXzZZyg==
+"@fisker/commitlint-config@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npm.taobao.org/@fisker/commitlint-config/download/@fisker/commitlint-config-1.0.2.tgz#1d9b0a945b3db7f7f3d0d85d6838a514b9f8bdc5"
+  integrity sha1-HZsKlFs9t/fz0NhdaDilFLn4vcU=
   dependencies:
     "@commitlint/config-conventional" "^7.5.0"
+    "@fisker/eslint-config" "^1.0.5"
 
-"@fisker/eslint-config@^1.0.8":
+"@fisker/eslint-config@^1.0.5", "@fisker/eslint-config@^1.0.8":
   version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@fisker/eslint-config/-/eslint-config-1.0.8.tgz#82c9271de13fd819c57cdfc180edc8ba72a0b355"
-  integrity sha512-ymvf+TlENgA6heFG9Xh4oQxSUn8aElpEb+5meu1Lz9/JOvCso4teMhMtQNgnsA4mgbq8W5ND/1WCNvXflKJXQg==
+  resolved "https://registry.npm.taobao.org/@fisker/eslint-config/download/@fisker/eslint-config-1.0.8.tgz#82c9271de13fd819c57cdfc180edc8ba72a0b355"
+  integrity sha1-gsknHeE/2BnFfN/BgO3IunKgs1U=
   dependencies:
     eslint-config-airbnb-base "^13.1.0"
     eslint-config-prettier "^4.2.0"
@@ -814,10 +815,12 @@
     eslint-plugin-promise "^4.1.1"
     eslint-plugin-unicorn "^8.0.2"
 
-"@fisker/lint-staged-config@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@fisker/lint-staged-config/-/lint-staged-config-1.0.4.tgz#08206dd7ce02fccce83939fcf21ba2b774b5be36"
-  integrity sha512-hzNU3DPo8SKCWKN4ew/6GZugxl2qihN6jOjQv3yvtOE1u+W2rXS8Wxjdoh4Nia4ggdEIqkNkWcGr8KzjzpFhEA==
+"@fisker/lint-staged-config@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/@fisker/lint-staged-config/download/@fisker/lint-staged-config-1.0.1.tgz#957e240ba4cb77402adc63cf94cf76d689bba67a"
+  integrity sha1-lX4kC6TLd0Aq3GPPlM921om7pno=
+  dependencies:
+    "@fisker/eslint-config" "^1.0.5"
 
 "@fisker/prettier-config@^1.0.12":
   version "1.0.12"
@@ -861,6 +864,11 @@
   version "11.13.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.13.5.tgz#266564afa8a6a09dc778dfacc703ed3f09c80516"
   integrity sha512-/OMMBnjVtDuwX1tg2pkYVSqRIDSmNTnvVvmvP/2xiMAAWf4a5+JozrApCrO4WCAILmXVxfNoQ3E+0HJbNpFVGg==
+
+"@types/normalize-package-data@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.npm.taobao.org/@types/normalize-package-data/download/@types/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
+  integrity sha1-5IbQ2XOW15vu3QpuM/RTT/a0lz4=
 
 "@types/resolve@0.0.8":
   version "0.0.8"
@@ -1058,10 +1066,10 @@ atob@^2.1.1:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-babel-plugin-transform-async-to-promises@^0.8.9:
-  version "0.8.9"
-  resolved "https://registry.yarnpkg.com/babel-plugin-transform-async-to-promises/-/babel-plugin-transform-async-to-promises-0.8.9.tgz#a214630248c349b2390930d03588b57958fedcfc"
-  integrity sha512-m5wjgvuaycQjDDo1gIywcPyF2IMwgk+c/Ks3ZSyjo2+n2QWbzMT+CoJAvLYHn6wb9of6iSFbsR7UAjDCTvWoQA==
+babel-plugin-transform-async-to-promises@^0.8.10:
+  version "0.8.10"
+  resolved "https://registry.npm.taobao.org/babel-plugin-transform-async-to-promises/download/babel-plugin-transform-async-to-promises-0.8.10.tgz#d6b75ebcd08a27b780cc4306525e6bfc5e070303"
+  integrity sha1-1rdevNCKJ7eAzEMGUl5r/F4HAwM=
 
 babel-polyfill@6.26.0:
   version "6.26.0"
@@ -2868,10 +2876,10 @@ http-cache-semantics@^4.0.0:
   resolved "https://registry.yarnpkg.com/http-cache-semantics/-/http-cache-semantics-4.0.3.tgz#495704773277eeef6e43f9ab2c2c7d259dda25c5"
   integrity sha512-TcIMG3qeVLgDr1TEd2XvHaTnMPwYQUQMIBLy+5pLSDKYFc7UIqj39w8EGzZkaxoLv/l2K8HaI0t5AVA+YYgUew==
 
-husky@^2.0.0:
+husky@^2.1.0:
   version "2.1.0"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-2.1.0.tgz#f486dd063596ad3aad4bbbcd8673ca5bface3caa"
-  integrity sha512-FHsqdIJPmQX/89Xg/761RMFCPSNNG2eiQMxChGP081NTohHexEuu/4nYh5m4TcFKq4xm+DqaGp8J/EUnkzL1Aw==
+  resolved "https://registry.npm.taobao.org/husky/download/husky-2.1.0.tgz#f486dd063596ad3aad4bbbcd8673ca5bface3caa"
+  integrity sha1-9IbdBjWWrTqtS7vNhnPKW/rOPKo=
   dependencies:
     cosmiconfig "^5.2.0"
     execa "^1.0.0"
@@ -4022,10 +4030,10 @@ noop-logger@^0.1.1:
   resolved "https://registry.yarnpkg.com/noop-logger/-/noop-logger-0.1.1.tgz#94a2b1633c4f1317553007d8966fd0e841b6a4c2"
   integrity sha1-lKKxYzxPExdVMAfYlm/Q6EG2pMI=
 
-normalize-package-data@^2.3.0, normalize-package-data@^2.3.2, normalize-package-data@^2.3.4, normalize-package-data@^2.3.5:
+normalize-package-data@^2.3.0, normalize-package-data@^2.3.2, normalize-package-data@^2.3.4, normalize-package-data@^2.3.5, normalize-package-data@^2.5.0:
   version "2.5.0"
-  resolved "https://registry.yarnpkg.com/normalize-package-data/-/normalize-package-data-2.5.0.tgz#e66db1838b200c1dfc233225d12cb36520e234a8"
-  integrity sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==
+  resolved "https://registry.npm.taobao.org/normalize-package-data/download/normalize-package-data-2.5.0.tgz#e66db1838b200c1dfc233225d12cb36520e234a8"
+  integrity sha1-5m2xg4sgDB38IzIl0SyzZSDiNKg=
   dependencies:
     hosted-git-info "^2.1.4"
     resolve "^1.10.0"
@@ -4636,6 +4644,16 @@ read-pkg@^5.0.0:
   dependencies:
     normalize-package-data "^2.3.2"
     parse-json "^4.0.0"
+
+read-pkg@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.npm.taobao.org/read-pkg/download/read-pkg-5.1.1.tgz#5cf234dde7a405c90c88a519ab73c467e9cb83f5"
+  integrity sha1-XPI03eekBckMiKUZq3PEZ+nLg/U=
+  dependencies:
+    "@types/normalize-package-data" "^2.4.0"
+    normalize-package-data "^2.5.0"
+    parse-json "^4.0.0"
+    type-fest "^0.4.1"
 
 "readable-stream@2 || 3", readable-stream@^3.0.2, readable-stream@^3.1.1:
   version "3.3.0"
