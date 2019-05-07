@@ -792,13 +792,12 @@
   dependencies:
     find-up "^2.1.0"
 
-"@fisker/commitlint-config@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npm.taobao.org/@fisker/commitlint-config/download/@fisker/commitlint-config-1.0.2.tgz#1d9b0a945b3db7f7f3d0d85d6838a514b9f8bdc5"
-  integrity sha1-HZsKlFs9t/fz0NhdaDilFLn4vcU=
+"@fisker/commitlint-config@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@fisker/commitlint-config/-/commitlint-config-1.0.6.tgz#c6ed777233e53af5c547773f31b9ac7032baf3af"
+  integrity sha512-ZIAqG3u+XOh4YfmKJwIZ8ZZ4WsW7lmmFjL0SKLOlVA6MnDPISIDYUS1VxRdFzk+H0dk+g/ZtxDTGBg5vtCjWKA==
   dependencies:
     "@commitlint/config-conventional" "^7.5.0"
-    "@fisker/eslint-config" "^1.0.5"
 
 "@fisker/eslint-config@^1.0.10", "@fisker/eslint-config@^1.0.5":
   version "1.0.10"
