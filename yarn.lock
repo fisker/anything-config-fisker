@@ -814,10 +814,10 @@
     eslint-plugin-promise "^4.1.1"
     eslint-plugin-unicorn "^8.0.2"
 
-"@fisker/husky-config@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@fisker/husky-config/-/husky-config-1.0.3.tgz#6541a92ada68381fc12308f6a65a8df13bb20fc1"
-  integrity sha512-lDdJamTf19A9HNAjf1MvkWmiPN6lQyNQd3YAxI0ZgcxE7vrF8sllPaeLT/suaigfjkZBr30GCnNr6Eek/ov9MA==
+"@fisker/husky-config@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@fisker/husky-config/-/husky-config-1.1.0.tgz#6edc5a2bf43a53ed7002d6eb3c0d14bc8c06ca69"
+  integrity sha512-znJ4sTCPAk3p8zvhAVSnax5mBAzk3FVb0SK30TUKHKYU7fOdqTMOB8PIH4bu4GskinX6GOwBiueXe9/SmCVMGQ==
 
 "@fisker/lint-staged-config@^1.0.4":
   version "1.0.4"
