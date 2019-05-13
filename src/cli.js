@@ -7,9 +7,8 @@ import updateNotifier from 'update-notifier'
 import tools from './tools'
 import printEffects from './core/print-effects'
 import projectPackage from './utils/pkg'
-import package_ from '../package.json'
 
-updateNotifier({pkg: package_}).notify()
+updateNotifier({pkg: require('../package.json')}).notify()
 
 // const HAS_YARN = hasYarn()
 // const NPM_CLIENT = HAS_YARN ? 'yarn' : 'npm'
