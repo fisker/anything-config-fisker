@@ -45,6 +45,9 @@ update_configs:
       - match:
           dependency_type: "production"
           update_type: "security:patch"
+      - match:
+          dependency_type: "production"
+          update_type: "semver:patch"
 
     # auto update package.json
     version_requirement_updates: "increase_versions"
