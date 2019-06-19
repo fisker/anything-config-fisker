@@ -25,7 +25,7 @@
     "dist:npm": "np --yolo --no-yarn"
   },
   "dependencies": {
-    "ansi-colors": "^3.2.4",
+    "ansi-colors": "^4.0.1",
     "babel-plugin-transform-async-to-promises": "^0.8.12",
     "cp-file": "^7.0.0",
     "enquirer": "^2.3.0",
