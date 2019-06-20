@@ -10,7 +10,8 @@ module.exports = {
     ],
     dependencies: ['eslint', '@fisker/eslint-config', 'prettier'],
     'package.json': {
-      'scripts["lint:eslint"]': 'eslint **/*.{js,mjs,vue} --fix',
+      'scripts["lint:eslint"]': 'eslint **/*.{js,mjs,vue}',
+      'scripts["format:eslint"]': 'yarn lint:eslint --fix',
     },
   },
 }
