@@ -2,7 +2,7 @@ module.exports = {
   name: 'NPM & GitHub Problems',
   effects: {
     files: ['license'],
-    dependencies: [],
+    dependencies: ['npm-run-all'],
     'package.json': {
       license: 'MIT',
       author: {
@@ -12,6 +12,7 @@ module.exports = {
       },
       'publishConfig.registry': 'https://registry.npmjs.org/',
       'publishConfig.access': 'public',
+      'scripts["dist"]': 'run-p dist:*',
       'scripts["dist:npm"]': 'np --yolo --no-yarn',
       sideEffects: false,
     },

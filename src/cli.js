@@ -4,6 +4,7 @@ import {prompt} from 'enquirer'
 import colors from 'ansi-colors'
 import writePackage from 'write-pkg'
 import updateNotifier from 'update-notifier'
+import sortKeys from 'sort-keys'
 import tools from './tools'
 import printEffects from './core/print-effects'
 import projectPackage from './utils/pkg'
@@ -115,6 +116,11 @@ async function run() {
   }
 
   await Promise.all(selectedTools.map(tool => tool.install(tool)))
+  for (const key of ['dependencies', 'scripts', 'devDependencies']) {
+    if (projectPackage[key]) {
+      projectPackage[key] = sortKeys(projectPackage[key])
+    }
+  }
   await writePackage(projectPackage)
 
   if (dependencies.length !== 0) {

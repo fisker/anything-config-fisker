@@ -14,8 +14,9 @@ module.exports = {
         dest: 'prettier.config.js',
       },
     ],
-    dependencies: ['prettier', '@fisker/prettier-config'],
+    dependencies: ['prettier', '@fisker/prettier-config', 'npm-run-all'],
     'package.json': {
+      'scripts["format"]': 'run-p format:*',
       'scripts["format:prettier"]': `prettier **/*.{${extensions}} --write`,
     },
   },

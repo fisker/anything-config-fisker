@@ -35,6 +35,7 @@
     "has-yarn": "^2.1.0",
     "latest-version": "^5.1.0",
     "read-pkg": "^5.1.1",
+    "sort-keys": "^3.0.0",
     "update-notifier": "^3.0.0",
     "write-pkg": "^4.0.0"
   },
