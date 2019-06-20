@@ -17,7 +17,7 @@
     "lint": "run-p lint:*",
     "lint:eslint": "eslint **/*.{js,mjs,vue}",
     "lint:markdown": "markdownlint **/*.md --ignore \"**/node_modules/**\"",
-    "format": "run-p formart:*",
+    "format": "run-p format:*",
     "format:eslint": "yarn lint:eslint --fix",
     "format:prettier": "prettier **/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml} --write",
     "build": "run-p build:*",

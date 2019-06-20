@@ -3,12 +3,12 @@ import updateDependencies from './update-dependencies'
 import updatePackage from './update-package'
 
 function install({effects}) {
-  const {files, dependencies, pkg} = effects
+  const {files, dependencies, pkg: package_} = effects
 
   return Promise.all([
     copyFiles(files),
     updateDependencies(dependencies),
-    updatePackage(pkg),
+    updatePackage(package_),
   ])
 }
 

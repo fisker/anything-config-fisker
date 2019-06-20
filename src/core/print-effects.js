@@ -25,9 +25,13 @@ function printEffects(tools) {
     console.log(
       colors.yellowBright(`${files.length} file${files.length > 1 ? 's' : ''}`)
     )
-    for (const {sourceRelative, destRelative, exists} of files) {
+    for (const {
+      sourceRelative,
+      destRelative: destinationRelative,
+      exists,
+    } of files) {
       console.log(
-        ` - ${destRelative}${exists ? colors.red(' (overwrite)') : ''}`
+        ` - ${destinationRelative}${exists ? colors.red(' (overwrite)') : ''}`
       )
       // console.log(`    from ${colors.gray(sourceRelative)}`)
     }

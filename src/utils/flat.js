@@ -14,4 +14,4 @@ function flat(array) {
   )
 }
 
-export default (nativeFlat ? flatWithNative : flat)
+export default nativeFlat ? flatWithNative : flat
