@@ -22,7 +22,7 @@
     "format:prettier": "prettier **/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml} --write",
     "build": "run-p build:*",
     "build:js": "rollup --config",
-    "release": "run-s clean lint prettier build dist",
+    "release": "run-s clean lint build format dist",
     "dist": "run-p dist:*",
     "dist:npm": "np --yolo --no-yarn"
   },
