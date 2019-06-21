@@ -1,7 +1,7 @@
-# ignore file for `stylelint`
+# ignore file for `eslint`
 #
-# update: wget -O .stylelintignore https://git.io/fjJP6
-# document: https://stylelint.io/user-guide/configuration/#ignorefiles
+# update: wget -O .eslintignore https://git.io/fjVjo
+# document: https://eslint.org/docs/user-guide/configuring#eslintignore
 #
 
 # also lint dot files

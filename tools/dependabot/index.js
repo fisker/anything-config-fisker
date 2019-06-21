@@ -2,7 +2,7 @@ module.exports = {
   effects: {
     files: [
       {
-        source: 'config.yml',
+        source: 'files/config.yml',
         dest: '.dependabot/config.yml',
       },
     ],

@@ -1,7 +1,12 @@
 module.exports = {
   name: 'NPM & GitHub Problems',
   effects: {
-    files: ['license'],
+    files: [
+      {
+        source: 'files/license.txt',
+        dest: 'license',
+      },
+    ],
     dependencies: ['npm-run-all'],
     'package.json': {
       license: 'MIT',

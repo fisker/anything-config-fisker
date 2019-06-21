@@ -16,6 +16,7 @@
     "clean": "rimraf lib",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint **/*.{js,mjs,vue}",
+    "lint:prettier": "prettier **/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml} --check",
     "lint:markdown": "markdownlint **/*.md --ignore \"**/node_modules/**\"",
     "format": "run-p format:*",
     "format:eslint": "yarn lint:eslint --fix",

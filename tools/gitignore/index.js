@@ -3,7 +3,7 @@ module.exports = {
   effects: {
     files: [
       {
-        source: 'gitignore',
+        source: 'files/ignore',
         dest: '.gitignore',
       },
     ],

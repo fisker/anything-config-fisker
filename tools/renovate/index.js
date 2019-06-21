@@ -1,6 +1,11 @@
 module.exports = {
   effects: {
-    files: ['renovate.json'],
+    files: [
+      {
+        source: 'files/config.json',
+        dest: 'renovate.json',
+      },
+    ],
     dependencies: [],
     'package.json': [],
   },

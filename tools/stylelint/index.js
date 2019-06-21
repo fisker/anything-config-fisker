@@ -1,6 +1,15 @@
 module.exports = {
   effects: {
-    files: ['.stylelintignore', 'stylelint.config.js'],
+    files: [
+      {
+        source: 'files/ignore',
+        dest: '.stylelintignore',
+      },
+      {
+        source: 'files/config.js',
+        dest: 'stylelint.config.js',
+      },
+    ],
     dependencies: [
       'stylelint',
       '@fisker/stylelint-config',
@@ -9,7 +18,7 @@ module.exports = {
     ],
     'package.json': {
       'scripts["lint"]': 'run-p lint:*',
-      'scripts["lint:stylelint"]': 'stylelint **/*.{css,scss,less}',
+      'scripts["lint:stylelint"]': 'stylelint "**/*.{css,scss,less}"',
       'scripts["format"]': 'run-p format:*',
       'scripts["format:stylelint"]': 'yarn lint:stylelint --fix',
     },

@@ -2,9 +2,12 @@ module.exports = {
   name: 'ESLint',
   effects: {
     files: [
-      '.eslintignore',
       {
-        source: 'eslint-run-commands.js',
+        source: 'files/ignore',
+        dest: '.eslintignore',
+      },
+      {
+        source: 'files/config.js',
         dest: '.eslintrc.js',
       },
     ],
