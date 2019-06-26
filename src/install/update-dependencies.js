@@ -5,7 +5,7 @@ import updatePackage from './update-package'
 async function updateDependency({type, name}) {
   const key = [type || 'devDependencies', name]
   const version = await latestVersion(name)
-  const value = version ? `^${version}` : 'latest'
+  const value = version ? `${version}` : 'latest'
 
   updatePackage([
     {
