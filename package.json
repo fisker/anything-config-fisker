@@ -28,7 +28,7 @@
     "release": "run-s clean lint build format dist"
   },
   "dependencies": {
-    "ansi-colors": "4.1.0",
+    "ansi-colors": "4.1.1",
     "babel-plugin-transform-async-to-promises": "0.8.12",
     "cp-file": "7.0.0",
     "enquirer": "2.3.0",
