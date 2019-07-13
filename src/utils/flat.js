@@ -1,17 +1,3 @@
-const {flat: nativeFlat} = Array.prototype
+const {flat} = Array.prototype
 
-function flatWithNative(array) {
-  return array.flat()
-}
-
-function flat(array) {
-  return array.reduce(
-    (acc, current) => [
-      ...acc,
-      ...(Array.isArray(current) ? current : [current]),
-    ],
-    []
-  )
-}
-
-export default nativeFlat ? flatWithNative : flat
+export default (flat ? array => array.flat() : array => [].concat(...array))

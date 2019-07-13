@@ -1,10 +1,14 @@
 module.exports = {
-  name: 'gitignore',
+  name: 'git related',
   effects: {
     files: [
       {
-        source: 'files/ignore',
+        source: 'files/git-ignore',
         dest: '.gitignore',
+      },
+      {
+        source: 'files/git-attributes',
+        dest: '.gitattributes',
       },
     ],
     dependencies: [],
