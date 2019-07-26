@@ -1,4 +1,4 @@
-import package_ from '../utils/pkg'
+import package_ from '../utils/package'
 import setValue from '../utils/set-object-value-by-path'
 
 function updatePackage(data) {

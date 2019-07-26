@@ -1,4 +1,4 @@
-import package_ from '../utils/pkg'
+import package_ from '../utils/package'
 import hasProperty from '../utils/is-object-has-path'
 import getPathSegments from '../utils/get-path-segments'
 import getValue from '../utils/get-object-value-by-path'
