@@ -22,7 +22,7 @@ module.exports = {
       'scripts["lint"]': 'run-p lint:*',
       'scripts["lint:prettier"]': `prettier "**/*.{${extensions}}" --check`,
       'scripts["format"]': 'run-p format:*',
-      'scripts["format:prettier"]': `prettier "**/*.{${extensions}}" --write`,
+      'scripts["format:prettier"]': 'yarn lint:prettier --write',
     },
   },
 }
