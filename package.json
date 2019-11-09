@@ -8,13 +8,13 @@
   },
   "files": [
     "cli.js",
-    "lib",
+    "dist",
     "tools"
   ],
   "scripts": {
     "build": "run-p build:*",
     "build:js": "rollup --config",
-    "clean": "rimraf lib",
+    "clean": "rimraf dist",
     "dev": "rollup --config --watch",
     "dist": "run-p dist:*",
     "dist:npm": "np --yolo --no-yarn",

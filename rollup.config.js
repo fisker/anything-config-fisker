@@ -3,18 +3,10 @@ import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
 import babel from 'rollup-plugin-babel'
 // import {terser} from 'rollup-plugin-terser'
-import filesize from 'rollup-plugin-filesize'
 import package_ from './package.json'
 
 const external = Object.keys(package_.dependencies).concat(['path', 'fs'])
-const plugins = [
-  json(),
-  nodeResolve(),
-  commonjs(),
-  babel(),
-  // terser(),
-  filesize(),
-]
+const plugins = [json(), nodeResolve(), commonjs(), babel()]
 
 const FORMAT_CJS = 'cjs'
 
@@ -30,7 +22,7 @@ function rollupConfig(config = {}) {
   return {
     input: `src/${entry}.js`,
     output: {
-      file: `lib/${dist}.js`,
+      file: `dist/${dist}.js`,
       format: FORMAT_CJS,
     },
     plugins,
