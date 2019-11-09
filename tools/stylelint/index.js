@@ -3,11 +3,11 @@ module.exports = {
     files: [
       {
         source: 'files/ignore',
-        dest: '.stylelintignore',
+        destination: '.stylelintignore',
       },
       {
         source: 'files/config.js',
-        dest: 'stylelint.config.js',
+        destination: 'stylelint.config.js',
       },
     ],
     dependencies: [
@@ -16,7 +16,7 @@ module.exports = {
       'prettier',
       'npm-run-all',
     ],
-    'package.json': {
+    packageJson: {
       'scripts["lint"]': 'run-p lint:*',
       'scripts["lint:stylelint"]': 'stylelint "**/*.{css,scss,less}"',
       'scripts["format"]': 'run-p format:*',

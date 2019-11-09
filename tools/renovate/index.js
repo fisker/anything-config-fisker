@@ -3,10 +3,10 @@ module.exports = {
     files: [
       {
         source: 'files/config.json',
-        dest: 'renovate.json',
+        destination: 'renovate.json',
       },
     ],
     dependencies: [],
-    'package.json': [],
+    packageJson: [],
   },
 }

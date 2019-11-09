@@ -3,10 +3,10 @@ module.exports = {
     files: [
       {
         source: 'files/config.js',
-        dest: 'commitlint.config.js',
+        destination: 'commitlint.config.js',
       },
     ],
     dependencies: ['@commitlint/cli', '@fisker/commitlint-config'],
-    'package.json': [],
+    packageJson: [],
   },
 }

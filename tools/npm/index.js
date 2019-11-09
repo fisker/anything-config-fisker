@@ -1,17 +1,17 @@
 module.exports = {
-  name: 'npm related',
+  name: 'npm & yarn related',
   effects: {
     files: [
       {
         source: 'files/npmrc',
-        dest: '.npmrc',
+        destination: '.npmrc',
       },
       {
         source: 'files/yarnrc',
-        dest: '.yarnrc',
+        destination: '.yarnrc',
       },
     ],
     dependencies: [],
-    'package.json': {},
+    packageJson: {},
   },
 }

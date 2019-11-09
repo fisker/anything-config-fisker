@@ -1,10 +1,10 @@
-import package_ from '../utils/package'
+import packageJson from '../utils/package'
 import hasOwn from '../utils/has-own'
 
 const {
   dependencies = {},
   devDependencies: developmentDependencies = {},
-} = package_
+} = packageJson
 
 const packageDependencies = {
   any: {

@@ -1,5 +1,5 @@
 import {sync as readPackage} from 'read-pkg'
 
-const package_ = readPackage({normalize: false})
+const packageJson = readPackage({normalize: false})
 
-export default package_
+export default packageJson

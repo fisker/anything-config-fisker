@@ -4,10 +4,10 @@ module.exports = {
     files: [
       {
         source: 'files/config.ini',
-        dest: '.editorconfig',
+        destination: '.editorconfig',
       },
     ],
     dependencies: [],
-    'package.json': [],
+    packageJson: [],
   },
 }

@@ -6,4 +6,4 @@ process.on('unhandledRejection', error => {
 })
 
 // eslint-disable-next-line import/no-unresolved
-require('./lib/cli').run()
+require('./dist/cli').run()
