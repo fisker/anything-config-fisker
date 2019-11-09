@@ -1,9 +1,10 @@
 module.exports = {
+  name: 'circleci',
   effects: {
     files: [
       {
-        source: 'files/config.json',
-        destination: 'renovate.json',
+        source: 'files/config.yml',
+        destination: '.circleci/config.yml',
       },
     ],
     dependencies: [],

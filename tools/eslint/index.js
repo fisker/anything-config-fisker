@@ -4,11 +4,11 @@ module.exports = {
     files: [
       {
         source: 'files/ignore',
-        dest: '.eslintignore',
+        destination: '.eslintignore',
       },
       {
         source: 'files/config.js',
-        dest: '.eslintrc.js',
+        destination: '.eslintrc.js',
       },
     ],
     dependencies: [
@@ -17,7 +17,7 @@ module.exports = {
       'prettier',
       'npm-run-all',
     ],
-    'package.json': {
+    packageJson: {
       'scripts["lint"]': 'run-p lint:*',
       'scripts["lint:eslint"]': 'eslint "**/*.{js,mjs,vue}"',
       'scripts["format"]': 'run-p format:*',

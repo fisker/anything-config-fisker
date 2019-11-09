@@ -1,8 +1,8 @@
 import exists from './is-exists'
 
-function isInstalled({pkg: package_, files, dependencies}) {
+function isInstalled({packageJson, files, dependencies}) {
   return (
-    package_.some(exists) || files.some(exists) || dependencies.some(exists)
+    packageJson.some(exists) || files.some(exists) || dependencies.some(exists)
   )
 }
 

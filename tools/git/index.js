@@ -4,14 +4,14 @@ module.exports = {
     files: [
       {
         source: 'files/git-ignore',
-        dest: '.gitignore',
+        destination: '.gitignore',
       },
       {
         source: 'files/git-attributes',
-        dest: '.gitattributes',
+        destination: '.gitattributes',
       },
     ],
     dependencies: [],
-    'package.json': {},
+    packageJson: {},
   },
 }

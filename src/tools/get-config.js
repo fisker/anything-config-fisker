@@ -27,8 +27,8 @@ function getToolConfig(directoryName) {
   return {
     id: directory,
     name,
-    dirName: directoryName,
-    dir: directory,
+    directoryName,
+    directory,
     effects,
     isInstalled,
     install,

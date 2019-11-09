@@ -4,11 +4,11 @@ module.exports = {
     files: [
       {
         source: 'files/license.txt',
-        dest: 'license',
+        destination: 'license',
       },
     ],
     dependencies: ['npm-run-all'],
-    'package.json': {
+    packageJson: {
       license: 'MIT',
       author: {
         name: 'fisker Cheung',

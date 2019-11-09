@@ -13,11 +13,11 @@ function notEqualFilter({equal}) {
 }
 
 function printEffects(tools) {
-  const files = mergeEffectsByKey(tools, 'files').sort(sortBy('dest'))
+  const files = mergeEffectsByKey(tools, 'files').sort(sortBy('destination'))
   const dependencies = mergeEffectsByKey(tools, 'dependencies').sort(
     sortBy('name')
   )
-  const package_ = mergeEffectsByKey(tools, 'pkg')
+  const packageJson = mergeEffectsByKey(tools, 'packageJson')
     .filter(notEqualFilter)
     .sort(sortBy('key'))
 
@@ -52,15 +52,15 @@ function printEffects(tools) {
     console.log('')
   }
 
-  if (package_.length !== 0) {
+  if (packageJson.length !== 0) {
     console.log(
       colors.yellowBright(
-        `${package_.length} change${
-          package_.length > 1 ? 's' : ''
+        `${packageJson.length} change${
+          packageJson.length > 1 ? 's' : ''
         } in package.json`
       )
     )
-    for (const {key, segments, original, value, exists, equal} of package_) {
+    for (const {key, segments, original, value, exists, equal} of packageJson) {
       console.log(
         ` - ${segments.join('.')}${exists ? colors.red(' (overwrite)') : ''}`
       )
@@ -80,7 +80,7 @@ function printEffects(tools) {
   return {
     files,
     dependencies,
-    pkg: package_,
+    packageJson,
   }
 }
 

@@ -9,7 +9,7 @@ function fileParser(file, directory) {
     file = {source: file}
   }
 
-  let {source, dest: destination = source} = file
+  let {source, destination = source} = file
 
   source = join(directory, source)
   if (!isPathInside(source, directory) || !existsSync(source)) {
@@ -28,8 +28,8 @@ function fileParser(file, directory) {
     file: relative(directory, source),
     source,
     sourceRelative: relative(directory, source),
-    dest: destination,
-    destRelative: relative(CWD, destination),
+    destination,
+    destinationRelative: relative(CWD, destination),
     exists,
   }
 }

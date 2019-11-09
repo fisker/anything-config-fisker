@@ -10,15 +10,15 @@ module.exports = {
     files: [
       {
         source: 'files/ignore',
-        dest: '.prettierignore',
+        destination: '.prettierignore',
       },
       {
         source: 'files/config.js',
-        dest: 'prettier.config.js',
+        destination: 'prettier.config.js',
       },
     ],
     dependencies: ['prettier', '@fisker/prettier-config', 'npm-run-all'],
-    'package.json': {
+    packageJson: {
       'scripts["lint"]': 'run-p lint:*',
       'scripts["lint:prettier"]': `prettier "**/*.{${extensions}}" --check`,
       'scripts["format"]': 'run-p format:*',
