@@ -1,4 +1,4 @@
-import package_ from '../utils/pkg'
+import package_ from '../utils/package'
 import hasOwn from '../utils/has-own'
 
 const {

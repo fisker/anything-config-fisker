@@ -7,7 +7,7 @@ import updateNotifier from 'update-notifier'
 import sortKeys from 'sort-keys'
 import tools from './tools'
 import printEffects from './core/print-effects'
-import projectPackage from './utils/pkg'
+import projectPackage from './utils/package'
 
 updateNotifier({pkg: require('../package.json')}).notify()
 

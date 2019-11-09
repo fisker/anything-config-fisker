@@ -6,6 +6,10 @@ module.exports = {
         source: 'files/npmrc',
         dest: '.npmrc',
       },
+      {
+        source: 'files/yarnrc',
+        dest: '.yarnrc',
+      },
     ],
     dependencies: [],
     'package.json': {},
