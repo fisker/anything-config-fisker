@@ -96,12 +96,12 @@ async function run() {
     return false
   }
 
-  const {files, dependencies, pkg: package_} = printEffects(selectedTools)
+  const {files, dependencies, packageJson} = printEffects(selectedTools)
 
   if (
     files.length !== 0 ||
     dependencies.length !== 0 ||
-    package_.length !== 0
+    packageJson.length !== 0
   ) {
     const {confirmed} = await prompt({
       type: 'confirm',
