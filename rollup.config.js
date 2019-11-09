@@ -30,7 +30,7 @@ function rollupConfig(config = {}) {
   return {
     input: `src/${entry}.js`,
     output: {
-      file: `lib/${dist}.js`,
+      file: `dist/${dist}.js`,
       format: FORMAT_CJS,
     },
     plugins,
