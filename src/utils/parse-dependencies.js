@@ -5,7 +5,10 @@ async function parseDependencies(dependencies) {
   dependencies = uniq(dependencies)
 
   const promises = dependencies.map(dependency =>
-    latestVersion(dependency).then(version => `^${version}`, () => 'latest')
+    latestVersion(dependency).then(
+      version => `^${version}`,
+      () => 'latest'
+    )
   )
 
   const versions = await Promise.all(promises)
