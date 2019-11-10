@@ -7,7 +7,7 @@ module.exports = {
         destination: 'license',
       },
     ],
-    dependencies: ['npm-run-all'],
+    dependencies: ['npm-run-all', 'del-cli'],
     packageJson: {
       license: 'MIT',
       author: {
@@ -19,6 +19,8 @@ module.exports = {
       'publishConfig.access': 'public',
       'scripts["dist"]': 'run-p dist:*',
       'scripts["dist:npm"]': 'np --yolo --no-yarn',
+      'scripts["clean"]': 'run-p clean:*',
+      'scripts["clean:dist"]': 'del-cli dist',
       sideEffects: false,
     },
   },
