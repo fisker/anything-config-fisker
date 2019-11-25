@@ -1,6 +1,6 @@
 {
   "name": "anything-config-fisker",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "all configs for fisker",
   "repository": "fisker/anything-config-fisker",
   "bin": {
