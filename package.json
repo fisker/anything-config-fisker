@@ -2,15 +2,26 @@
   "name": "anything-config-fisker",
   "version": "2.0.3",
   "description": "all configs for fisker",
+  "homepage": "https://github.com/fisker/anthing-config-fisker#readme",
+  "bugs": {
+    "url": "https://github.com/fisker/anthing-config-fisker/issues"
+  },
   "repository": "fisker/anything-config-fisker",
-  "bin": {
-    "fisker-config": "cli.js"
+  "license": "MIT",
+  "author": {
+    "name": "fisker Cheung",
+    "email": "lionkay@gmail.com",
+    "url": "https://www.fiskercheung.com/"
   },
   "files": [
     "cli.js",
     "dist",
     "tools"
   ],
+  "sideEffects": false,
+  "bin": {
+    "fisker-config": "cli.js"
+  },
   "scripts": {
     "build": "run-p build:*",
     "build:js": "rollup --config",
@@ -23,11 +34,17 @@
     "format:eslint": "yarn lint:eslint --fix",
     "format:markdown": "yarn lint:markdown --fix",
     "format:prettier": "yarn lint:prettier --write",
+    "format:sort-package-json": "sort-package-json \"package.json\" \"packages/*/package.json\"",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint \"**/*.{js,mjs,vue}\"",
     "lint:markdown": "markdownlint \"**/*.md\" --ignore \"**/node_modules/**\"",
     "lint:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --check",
     "release": "run-s clean lint build format dist"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "ansi-colors": "4.1.1",
@@ -68,26 +85,11 @@
     "rollup-plugin-json": "4.0.0",
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-terser": "5.1.2",
+    "sort-package-json": "1.24.0",
     "standard-version": "7.0.1"
   },
-  "bugs": {
-    "url": "https://github.com/fisker/anthing-config-fisker/issues"
-  },
-  "homepage": "https://github.com/fisker/anthing-config-fisker#readme",
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "license": "MIT",
-  "author": {
-    "name": "fisker Cheung",
-    "email": "lionkay@gmail.com",
-    "url": "https://www.fiskercheung.com/"
-  },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
-  "sideEffects": false
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }
