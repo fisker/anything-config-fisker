@@ -5,6 +5,7 @@ module.exports = {
     packageJson: {
       'scripts["format:package-json"]':
         'sort-package-json "package.json" "packages/*/package.json"',
+      'scripts["format:sort-package-json"]': undefined,
     },
   },
 }
