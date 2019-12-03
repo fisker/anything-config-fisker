@@ -86,7 +86,7 @@
     "rollup-plugin-json": "4.0.0",
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-terser": "5.1.2",
-    "sort-package-json": "1.28.0",
+    "sort-package-json": "1.30.0",
     "standard-version": "7.0.1"
   },
   "publishConfig": {
