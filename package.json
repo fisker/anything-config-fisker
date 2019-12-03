@@ -1,6 +1,6 @@
 {
   "name": "anything-config-fisker",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "all configs for fisker",
   "homepage": "https://github.com/fisker/anthing-config-fisker#readme",
   "bugs": {
@@ -38,6 +38,7 @@
     "lint": "run-p lint:*",
     "lint:eslint": "eslint \"**/*.{js,mjs,vue}\"",
     "lint:markdown": "markdownlint \"**/*.md\" --ignore \"**/node_modules/**\"",
+    "lint:package-json": "yarn run format:package-json --check",
     "lint:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --check",
     "release": "run-s clean lint build format dist"
   },
