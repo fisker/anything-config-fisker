@@ -1,11 +1,12 @@
-import nodeResolve from 'rollup-plugin-node-resolve'
+import nodeResolve from '@rollup/plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
-import json from 'rollup-plugin-json'
+// eslint-disable-next-line import/no-unresolved
+import json from '@rollup/plugin-json'
 import babel from 'rollup-plugin-babel'
 // import {terser} from 'rollup-plugin-terser'
-import package_ from './package.json'
+import packageJson from './package.json'
 
-const external = Object.keys(package_.dependencies).concat(['path', 'fs'])
+const external = Object.keys(packageJson.dependencies).concat(['path', 'fs'])
 const plugins = [json(), nodeResolve(), commonjs(), babel()]
 
 const FORMAT_CJS = 'cjs'
