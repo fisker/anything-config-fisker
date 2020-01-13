@@ -51,7 +51,7 @@
     "ansi-colors": "4.1.1",
     "babel-plugin-transform-async-to-promises": "0.8.15",
     "cp-file": "7.0.0",
-    "enquirer": "2.3.2",
+    "enquirer": "2.3.3",
     "execa": "4.0.0",
     "has-yarn": "2.1.0",
     "is-path-in-cwd": "^3.0.0",
