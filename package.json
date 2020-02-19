@@ -2,11 +2,12 @@
   "name": "anything-config-fisker",
   "version": "2.1.0",
   "description": "all configs for fisker",
-  "homepage": "https://github.com/fisker/anthing-config-fisker#readme",
+  "homepage": "https://github.com/fisker/anything-config-fisker#readme",
   "bugs": {
-    "url": "https://github.com/fisker/anthing-config-fisker/issues"
+    "url": "https://github.com/fisker/anything-config-fisker/issues"
   },
   "repository": "fisker/anything-config-fisker",
+  "funding": "https://github.com/fisker/anything-config-fisker?sponsor=1",
   "license": "MIT",
   "author": {
     "name": "fisker Cheung",

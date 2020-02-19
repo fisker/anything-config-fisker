@@ -33,6 +33,7 @@ module.exports = {
       },
       funding({name}) {
         return `https://github.com/fisker/${name}?sponsor=1`
+      },
     },
   },
 }
