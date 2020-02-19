@@ -10,6 +10,10 @@ function packageParser({key, value}) {
 
   key = segments.map(seg => `[${JSON.stringify(seg)}]`).join('')
 
+  if (typeof value === 'function') {
+    value = value(package_)
+  }
+
   const equal = JSON.stringify(original) === JSON.stringify(value)
 
   return {

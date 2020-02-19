@@ -22,6 +22,17 @@ module.exports = {
       'scripts["clean"]': 'run-p clean:*',
       'scripts["clean:dist"]': 'del-cli dist',
       sideEffects: false,
+      homepage({name}) {
+        return `https://github.com/fisker/${name}#readme`
+      },
+      'bugs.url': function({name}) {
+        return `https://github.com/fisker/${name}/issues`
+      },
+      repository({name}) {
+        return `fisker/${name}`
+      },
+      funding({name}) {
+        return `https://github.com/fisker/${name}?sponsor=1`
     },
   },
 }
