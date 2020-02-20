@@ -3,7 +3,7 @@
 //   .map(glob => glob.match(/\*\.{?(.*?)(?:}|)$/)[1])
 //   .join(',')
 
-const extensions = 'css,html,js,json,less,md,scss,ts,vue,yaml,yml'
+const extensions = 'css,html,js,cjs,mjs,json,less,md,scss,ts,vue,yaml,yml'
 
 module.exports = {
   effects: {

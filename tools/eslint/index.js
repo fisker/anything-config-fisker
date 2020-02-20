@@ -19,7 +19,7 @@ module.exports = {
     ],
     packageJson: {
       'scripts["lint"]': 'run-p lint:*',
-      'scripts["lint:eslint"]': 'eslint "**/*.{js,mjs,vue}"',
+      'scripts["lint:eslint"]': 'eslint "**/*.{js,mjs,cjs,vue}"',
       'scripts["format"]': 'run-p format:*',
       'scripts["format:eslint"]': 'yarn lint:eslint --fix',
     },
