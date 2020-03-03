@@ -51,7 +51,7 @@
   "dependencies": {
     "ansi-colors": "4.1.1",
     "babel-plugin-transform-async-to-promises": "0.8.15",
-    "cp-file": "7.0.0",
+    "cp-file": "8.0.1",
     "enquirer": "2.3.4",
     "execa": "4.0.0",
     "has-yarn": "2.1.0",
