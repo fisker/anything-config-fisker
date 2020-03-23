@@ -115,7 +115,7 @@ async function run() {
     }
   }
 
-  await Promise.all(selectedTools.map(tool => tool.install(tool)))
+  await Promise.all(selectedTools.map((tool) => tool.install(tool)))
   for (const key of ['dependencies', 'scripts', 'devDependencies']) {
     if (projectPackage[key]) {
       projectPackage[key] = sortKeys(projectPackage[key])

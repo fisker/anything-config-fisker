@@ -25,7 +25,7 @@ module.exports = {
       homepage({name}) {
         return `https://github.com/fisker/${name}#readme`
       },
-      'bugs.url': function({name}) {
+      'bugs.url': function ({name}) {
         return `https://github.com/fisker/${name}/issues`
       },
       repository({name}) {

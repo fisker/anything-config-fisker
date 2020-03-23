@@ -25,14 +25,10 @@ function effectsParser(effects, directory) {
   let {files = [], dependencies = [], packageJson = []} = effects
 
   files = toArray(files)
-    .map(file => fileParser(file, directory))
+    .map((file) => fileParser(file, directory))
     .filter(Boolean)
-  dependencies = toArray(dependencies)
-    .map(dependencyParser)
-    .filter(Boolean)
-  packageJson = packageToArray(packageJson)
-    .map(packageParser)
-    .filter(Boolean)
+  dependencies = toArray(dependencies).map(dependencyParser).filter(Boolean)
+  packageJson = packageToArray(packageJson).map(packageParser).filter(Boolean)
 
   return {
     files,

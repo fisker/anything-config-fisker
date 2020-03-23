@@ -4,9 +4,9 @@ import uniq from './uniq'
 async function parseDependencies(dependencies) {
   dependencies = uniq(dependencies)
 
-  const promises = dependencies.map(dependency =>
+  const promises = dependencies.map((dependency) =>
     latestVersion(dependency).then(
-      version => `^${version}`,
+      (version) => `^${version}`,
       () => 'latest'
     )
   )

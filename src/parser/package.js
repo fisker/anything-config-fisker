@@ -8,7 +8,7 @@ function packageParser({key, value}) {
   const exists = hasProperty(package_, segments)
   const original = getValue(package_, segments)
 
-  key = segments.map(seg => `[${JSON.stringify(seg)}]`).join('')
+  key = segments.map((seg) => `[${JSON.stringify(seg)}]`).join('')
 
   if (typeof value === 'function') {
     value = value(package_)
