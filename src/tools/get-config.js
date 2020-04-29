@@ -12,7 +12,8 @@ const helpers = {
 
 function getToolConfig(directoryName) {
   const directory = join(TOOLS_DIR, directoryName)
-  const config = global.require(directory)
+  // eslint-disable-next-line no-eval
+  const config = eval('require')(directory)
 
   const {name = directoryName, install = defaultInstall} = config
 
