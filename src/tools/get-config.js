@@ -12,7 +12,7 @@ const helpers = {
 
 function getToolConfig(directoryName) {
   const directory = join(TOOLS_DIR, directoryName)
-  const config = require(directory)
+  const config = global.require(directory)
 
   const {name = directoryName, install = defaultInstall} = config
 
