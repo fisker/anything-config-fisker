@@ -106,7 +106,7 @@ async function run() {
     const {confirmed} = await prompt({
       type: 'confirm',
       name: 'confirmed',
-      message: `confirmed effects above?`,
+      message: 'confirmed effects above?',
       initial: true,
     })
 
