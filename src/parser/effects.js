@@ -27,6 +27,7 @@ function effectsParser(effects, directory) {
   files = toArray(files)
     .map((file) => fileParser(file, directory))
     .filter(Boolean)
+    .filter(({source}) => source)
   dependencies = toArray(dependencies).map(dependencyParser).filter(Boolean)
   packageJson = packageToArray(packageJson).map(packageParser).filter(Boolean)
 
