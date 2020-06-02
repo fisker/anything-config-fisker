@@ -3,7 +3,10 @@ module.exports = {
     files: [
       {
         source: 'files/config.yml',
-        destination: '.dependabot/config.yml',
+        destination: '.github/dependabot.yml',
+      },
+      {
+        destination: '.dependabot',
       },
     ],
     dependencies: [],

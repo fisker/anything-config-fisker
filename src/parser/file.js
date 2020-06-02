@@ -10,10 +10,16 @@ function fileParser(file, directory) {
   }
 
   let {source, destination = source} = file
+  let sourceFile
+  let sourceRelative
 
-  source = join(directory, source)
-  if (!isPathInside(source, directory) || !existsSync(source)) {
-    return null
+  if (source) {
+    source = join(directory, source)
+    if (!isPathInside(source, directory) || !existsSync(source)) {
+      return null
+    }
+    sourceFile = relative(directory, source)
+    sourceRelative = relative(directory, source)
   }
 
   destination = join(CWD, destination)
@@ -25,9 +31,9 @@ function fileParser(file, directory) {
   const exists = existsSync(destination)
 
   return {
-    file: relative(directory, source),
+    file: sourceFile,
     source,
-    sourceRelative: relative(directory, source),
+    sourceRelative,
     destination,
     destinationRelative: relative(CWD, destination),
     exists,
