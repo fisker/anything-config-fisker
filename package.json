@@ -54,7 +54,7 @@
     "cp-file": "9.0.0",
     "del": "5.1.0",
     "enquirer": "2.3.6",
-    "execa": "4.0.2",
+    "execa": "4.0.3",
     "has-yarn": "2.1.0",
     "is-path-in-cwd": "^3.0.0",
     "is-path-inside": "^3.0.2",
