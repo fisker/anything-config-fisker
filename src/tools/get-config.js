@@ -1,4 +1,4 @@
-import {join} from 'path'
+import path from 'path'
 import {TOOLS_DIR} from '../constants'
 import effectsParser from '../parser/effects'
 import effectDetector from './has-effects'
@@ -11,7 +11,7 @@ const helpers = {
 }
 
 function getToolConfig(directoryName) {
-  const directory = join(TOOLS_DIR, directoryName)
+  const directory = path.join(TOOLS_DIR, directoryName)
   const config = require(directory)
 
   const {name = directoryName, install = defaultInstall} = config

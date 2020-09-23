@@ -1,5 +1,5 @@
-import {join, relative} from 'path'
-import {existsSync} from 'fs'
+import path from 'path'
+import fs from 'fs'
 import isPathInside from 'is-path-inside'
 import isPathInCwd from 'is-path-in-cwd'
 import {CWD} from '../constants'
@@ -14,28 +14,28 @@ function fileParser(file, directory) {
   let sourceRelative
 
   if (source) {
-    source = join(directory, source)
-    if (!isPathInside(source, directory) || !existsSync(source)) {
+    source = path.join(directory, source)
+    if (!isPathInside(source, directory) || !fs.existsSync(source)) {
       return null
     }
-    sourceFile = relative(directory, source)
-    sourceRelative = relative(directory, source)
+    sourceFile = path.relative(directory, source)
+    sourceRelative = path.relative(directory, source)
   }
 
-  destination = join(CWD, destination)
+  destination = path.join(CWD, destination)
 
   if (!isPathInCwd(destination)) {
     return null
   }
 
-  const exists = existsSync(destination)
+  const exists = fs.existsSync(destination)
 
   return {
     file: sourceFile,
     source,
     sourceRelative,
     destination,
-    destinationRelative: relative(CWD, destination),
+    destinationRelative: path.relative(CWD, destination),
     exists,
   }
 }
