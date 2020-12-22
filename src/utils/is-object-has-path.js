@@ -9,12 +9,12 @@ function hasProperty(object, path) {
   const seg = getPathSegments(path)
   const {length} = seg
 
-  for (let i = 0; i < length; i += 1) {
+  for (let index = 0; index < length; index += 1) {
     if (!isObject(object)) {
       return false
     }
 
-    const property = seg[i]
+    const property = seg[index]
     if (!(property in object)) {
       return false
     }

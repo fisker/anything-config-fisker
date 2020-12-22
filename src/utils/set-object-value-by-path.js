@@ -10,10 +10,10 @@ function setValue(object, path, value) {
   const {length} = seg
   const root = object
 
-  for (let i = 0; i < length; i += 1) {
-    const property = seg[i]
+  for (let index = 0; index < length; index += 1) {
+    const property = seg[index]
 
-    if (i === length - 1) {
+    if (index === length - 1) {
       object[property] = value
 
       return root

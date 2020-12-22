@@ -9,10 +9,10 @@ function getValue(object, path) {
   const seg = getPathSegments(path)
   const {length} = seg
 
-  for (let i = 0; i < length; i += 1) {
-    const property = seg[i]
+  for (let index = 0; index < length; index += 1) {
+    const property = seg[index]
 
-    if (i === length - 1) {
+    if (index === length - 1) {
       return object[property]
     }
 
