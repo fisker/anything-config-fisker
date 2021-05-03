@@ -57,7 +57,7 @@
     "execa": "5.0.0",
     "has-yarn": "2.1.0",
     "is-path-in-cwd": "^3.0.0",
-    "is-path-inside": "^3.0.3",
+    "is-path-inside": "^4.0.0",
     "latest-version": "5.1.0",
     "read-pkg": "5.2.0",
     "sort-keys": "4.2.0",
