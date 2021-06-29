@@ -8,8 +8,8 @@ module.exports = {
       'npm-run-all',
     ],
     packageJson: {
-      'type': 'module',
-      'exports': 'index.js',
+      type: 'module',
+      exports: 'index.js',
     },
   },
 }
