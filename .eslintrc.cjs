@@ -16,5 +16,22 @@ module.exports = {
   rules: {},
   plugins: [],
   globals: {},
-  overrides: [],
+  overrides: [
+    {
+      files: [
+        'tools/commitlint/files/config.js',
+        'tools/eslint/files/config.js',
+        'tools/husky/files/config.js',
+        'tools/lint-staged/files/config.js',
+        'tools/prettier/files/config.js',
+        'tools/stylelint/files/config.js',
+      ],
+      parserOptions: {sourceType: 'script'},
+      env: {node: true},
+      globals: {
+        require: 'readonly',
+        module: 'readonly',
+      },
+    },
+  ],
 }
