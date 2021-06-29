@@ -3,7 +3,7 @@ module.exports = {
     files: [
       {
         source: 'files/config.js',
-        destination: 'lint-staged.config.js',
+        destination: 'lint-staged.config.cjs',
       },
     ],
     dependencies: ['lint-staged', '@fisker/lint-staged-config'],

@@ -7,7 +7,7 @@ module.exports = {
       },
       {
         source: 'files/config.js',
-        destination: 'stylelint.config.js',
+        destination: 'stylelint.config.cjs',
       },
     ],
     dependencies: [

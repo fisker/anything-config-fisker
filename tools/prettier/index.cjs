@@ -14,7 +14,7 @@ module.exports = {
       },
       {
         source: 'files/config.js',
-        destination: 'prettier.config.js',
+        destination: 'prettier.config.cjs',
       },
     ],
     dependencies: ['prettier', '@fisker/prettier-config', 'npm-run-all'],

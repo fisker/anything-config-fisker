@@ -3,7 +3,7 @@ module.exports = {
     files: [
       {
         source: 'files/config.js',
-        destination: '.huskyrc.js',
+        destination: '.huskyrc.cjs',
       },
     ],
     dependencies: ['husky', '@fisker/husky-config'],

@@ -8,7 +8,7 @@ module.exports = {
       },
       {
         source: 'files/config.js',
-        destination: '.eslintrc.js',
+        destination: '.eslintrc.cjs',
       },
     ],
     dependencies: [
