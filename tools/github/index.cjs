@@ -3,7 +3,6 @@ module.exports = {
   effects: {
     files: [
       {
-        source: 'files/funding.yml',
         destination: '.github/funding.yml',
       },
       {

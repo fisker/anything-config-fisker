@@ -3,8 +3,7 @@ module.exports = {
   effects: {
     files: [
       {
-        source: 'files/config.yml',
-        destination: '.circleci/config.yml',
+        destination: '.circleci',
       },
     ],
     dependencies: [],
