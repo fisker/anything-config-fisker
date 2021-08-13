@@ -9,7 +9,7 @@ module.exports = {
     ],
     packageJson: {
       type: 'module',
-      exports: 'index.js',
+      exports: './index.js',
     },
   },
 }
