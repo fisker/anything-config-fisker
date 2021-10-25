@@ -18,7 +18,7 @@ module.exports = {
     ],
     packageJson: {
       'scripts["lint"]': 'run-p lint:*',
-      'scripts["lint:stylelint"]': 'stylelint "**/*.{css,scss,less}"',
+      'scripts["lint:stylelint"]': 'stylelint "**/*.{css,scss,less,html,scss}"',
       'scripts["format"]': 'run-p format:*',
       'scripts["format:stylelint"]': 'yarn lint:stylelint --fix',
     },
