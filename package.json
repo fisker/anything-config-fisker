@@ -63,7 +63,7 @@
     "read-pkg": "7.1.0",
     "sort-keys": "5.0.0",
     "update-notifier": "5.1.0",
-    "write-pkg": "5.0.0"
+    "write-pkg": "5.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "16.2.3",
