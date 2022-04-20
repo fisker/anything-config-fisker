@@ -9,6 +9,9 @@ module.exports = {
       },
     ],
     dependencies: [],
-    packageJson: [],
+    packageJson: {
+      "devDependencies['@commitlint/cli']": undefined,
+      "devDependencies['@fisker/commitlint-config']": undefined,
+    },
   },
 }

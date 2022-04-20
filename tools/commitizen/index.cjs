@@ -3,7 +3,7 @@ module.exports = {
     files: [],
     dependencies: [],
     packageJson: {
-      'config.commitizen': undefined,
+      config: undefined,
       "devDependencies['cz-conventional-changelog-emoji']": undefined,
     },
   },
