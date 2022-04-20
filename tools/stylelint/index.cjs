@@ -6,8 +6,11 @@ module.exports = {
         destination: '.stylelintignore',
       },
       {
-        source: 'files/config.js',
+        source: 'files/config.cjs',
         destination: 'stylelint.config.cjs',
+      },
+      {
+        destination: 'stylelint.config.js',
       },
     ],
     dependencies: [

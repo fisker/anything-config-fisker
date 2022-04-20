@@ -7,8 +7,11 @@ module.exports = {
         destination: '.eslintignore',
       },
       {
-        source: 'files/config.js',
+        source: 'files/config.cjs',
         destination: '.eslintrc.cjs',
+      },
+      {
+        destination: '.eslintrc.js',
       },
     ],
     dependencies: [
@@ -19,7 +22,7 @@ module.exports = {
     ],
     packageJson: {
       'scripts["lint"]': 'run-p lint:*',
-      'scripts["lint:eslint"]': 'eslint "**/*.{js,mjs,cjs,vue}"',
+      'scripts["lint:eslint"]': 'eslint "**/*.{js,jsx,mjs,cjs,vue}"',
       'scripts["format"]': 'run-p format:*',
       'scripts["format:eslint"]': 'yarn lint:eslint --fix',
     },

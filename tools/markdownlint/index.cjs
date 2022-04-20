@@ -2,17 +2,23 @@ module.exports = {
   effects: {
     files: [
       {
-        source: 'files/config.json',
+        source: 'files/config.cjs',
+        destination: '.markdownlint-cli2.cjs',
+      },
+      {
         destination: '.markdownlint.json',
       },
     ],
-    dependencies: ['markdownlint-cli', 'npm-run-all'],
+    dependencies: [
+      'markdownlint-cli2',
+      '@fisker/markdownlint-cli2-config',
+      'npm-run-all',
+    ],
     packageJson: {
       'scripts["lint"]': 'run-p lint:*',
-      'scripts["lint:markdown"]':
-        'markdownlint "**/*.md" --ignore "**/node_modules/**"',
+      'scripts["lint:markdown"]': 'markdownlint-cli2',
       'scripts["format"]': 'run-p format:*',
-      'scripts["format:markdown"]': 'yarn lint:markdown --fix',
+      'scripts["format:markdown"]': 'markdownlint-cli2-fix',
     },
   },
 }

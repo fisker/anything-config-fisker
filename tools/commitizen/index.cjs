@@ -1,9 +1,9 @@
 module.exports = {
   effects: {
     files: [],
-    dependencies: ['cz-conventional-changelog'],
+    dependencies: [],
     packageJson: {
-      'config.commitizen.path': './node_modules/cz-conventional-changelog',
+      'config.commitizen': undefined,
       "devDependencies['cz-conventional-changelog-emoji']": undefined,
     },
   },

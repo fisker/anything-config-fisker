@@ -2,11 +2,19 @@ module.exports = {
   effects: {
     files: [
       {
-        source: 'files/config.js',
+        source: 'files/pre-commit.sh',
+        destination: '.husky/pre-commit',
+      },
+      {
+        destination: '.huskyrc.js',
+      },
+      {
         destination: '.huskyrc.cjs',
       },
     ],
-    dependencies: ['husky', '@fisker/husky-config'],
-    packageJson: [],
+    dependencies: ['husky'],
+    packageJson: {
+      'scripts["prepare"]': 'husky install',
+    },
   },
 }

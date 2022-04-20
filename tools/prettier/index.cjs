@@ -3,7 +3,8 @@
 //   .map(glob => glob.match(/\*\.{?(.*?)(?:}|)$/)[1])
 //   .join(',')
 
-const extensions = 'css,html,js,cjs,mjs,json,less,md,scss,ts,vue,yaml,yml'
+const extensions =
+  'css,html,js,jsx,cjs,mjs,json,less,md,scss,ts,ts,mts,cts,vue,yaml,yml'
 
 module.exports = {
   effects: {
@@ -13,8 +14,11 @@ module.exports = {
         destination: '.prettierignore',
       },
       {
-        source: 'files/config.js',
+        source: 'files/config.cjs',
         destination: 'prettier.config.cjs',
+      },
+      {
+        destination: 'prettier.config.js',
       },
     ],
     dependencies: ['prettier', '@fisker/prettier-config', 'npm-run-all'],
