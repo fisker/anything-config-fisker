@@ -25,3 +25,4 @@ dist/**
 coverage/**
 
 # project glob
+tools/yarn/files/yarn-*.cjs
