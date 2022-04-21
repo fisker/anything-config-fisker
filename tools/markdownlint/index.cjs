@@ -15,7 +15,7 @@ module.exports = {
       'npm-run-all',
     ],
     packageJson: {
-      'devDependencies["markdownlint-cli2"]': undefined,
+      'devDependencies["markdownlint-cli"]': undefined,
       'scripts["lint"]': 'run-p lint:*',
       'scripts["lint:markdown"]': 'markdownlint-cli2',
       'scripts["format"]': 'run-p format:*',
