@@ -11,7 +11,7 @@ module.exports = {
       },
       {
         source: 'files/yarn-3.2.0.cjs',
-        destination: '.yarn/release/yarn-3.2.0.cjs',
+        destination: '.yarn/releases/yarn-3.2.0.cjs',
       },
     ],
     dependencies: [],
