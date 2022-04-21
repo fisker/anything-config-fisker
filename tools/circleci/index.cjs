@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'circleci',
+  name: 'Circleci (Uninstall)',
   effects: {
     files: [
       {

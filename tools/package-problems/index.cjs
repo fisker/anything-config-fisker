@@ -17,9 +17,9 @@ module.exports = {
       },
       'publishConfig.registry': 'https://registry.npmjs.org/',
       'publishConfig.access': 'public',
-      'scripts["dist"]': 'run-p dist:*',
+      'scripts["dist"]': 'run-p "dist:*"',
       'scripts["dist:npm"]': 'np --yolo --no-yarn',
-      'scripts["clean"]': 'run-p clean:*',
+      'scripts["clean"]': 'run-p "clean:*"',
       'scripts["clean:dist"]': 'del-cli dist',
       sideEffects: false,
       homepage({name}) {

@@ -15,9 +15,9 @@ module.exports = {
     ],
     dependencies: ['prettier', '@fisker/prettier-config', 'npm-run-all'],
     packageJson: {
-      'scripts["lint"]': 'run-p lint:*',
+      'scripts["lint"]': 'run-p "lint:*"',
       'scripts["lint:prettier"]': 'prettier . --check',
-      'scripts["format"]': 'run-p format:*',
+      'scripts["format"]': 'run-p "format:*"',
       'scripts["format:prettier"]': 'yarn lint:prettier --write',
     },
   },

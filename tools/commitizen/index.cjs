@@ -1,4 +1,5 @@
 module.exports = {
+  name: 'Commitizen (Uninstall)',
   effects: {
     files: [],
     dependencies: [],

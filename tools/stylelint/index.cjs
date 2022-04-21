@@ -20,9 +20,10 @@ module.exports = {
       'npm-run-all',
     ],
     packageJson: {
-      'scripts["lint"]': 'run-p lint:*',
-      'scripts["lint:stylelint"]': 'stylelint "**/*.{css,scss,less,html,scss}"',
-      'scripts["format"]': 'run-p format:*',
+      'scripts["lint"]': 'run-p "lint:*"',
+      'scripts["lint:stylelint"]':
+        'stylelint "**/*.{css,scss,less,html,scss,vue}"',
+      'scripts["format"]': 'run-p "format:*"',
       'scripts["format:stylelint"]': 'yarn lint:stylelint --fix',
     },
   },

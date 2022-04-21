@@ -1,4 +1,5 @@
 module.exports = {
+  name: 'Commitlint (Uninstall)',
   effects: {
     files: [
       {

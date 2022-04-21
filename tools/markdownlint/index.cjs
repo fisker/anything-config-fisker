@@ -16,9 +16,9 @@ module.exports = {
     ],
     packageJson: {
       'devDependencies["markdownlint-cli"]': undefined,
-      'scripts["lint"]': 'run-p lint:*',
+      'scripts["lint"]': 'run-p "lint:*"',
       'scripts["lint:markdown"]': 'markdownlint-cli2',
-      'scripts["format"]': 'run-p format:*',
+      'scripts["format"]': 'run-p "format:*"',
       'scripts["format:markdown"]': 'markdownlint-cli2-fix',
     },
   },
