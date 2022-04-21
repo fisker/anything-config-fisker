@@ -41,7 +41,8 @@
     "lint:markdown": "markdownlint-cli2",
     "lint:package-json": "yarn run format:package-json --check",
     "lint:prettier": "prettier . --check",
-    "release": "run-s clean lint build format dist",
+    "install-to-machine": "npm install --global anything-config-fisker",
+    "release": "run-s clean lint build format dist install-to-machine",
     "prepare": "husky install"
   },
   "dependencies": {
