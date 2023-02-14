@@ -13,6 +13,9 @@ node_modules/**
 **/vendor/**
 **/third-party/**
 
+# Yarn
+.yarn/
+
 # build file
 dist/**
 **/*.min.*
