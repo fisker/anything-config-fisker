@@ -70,7 +70,7 @@
     "@fisker/prettier-config": "5.0.7",
     "cz-conventional-changelog": "3.3.0",
     "del-cli": "5.0.0",
-    "eslint": "8.38.0",
+    "eslint": "8.39.0",
     "husky": "8.0.3",
     "lint-staged": "13.2.1",
     "markdownlint-cli2": "0.7.0",
