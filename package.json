@@ -60,7 +60,7 @@
     "read-pkg": "7.1.0",
     "sort-keys": "5.0.0",
     "update-notifier": "6.0.2",
-    "write-pkg": "5.1.0"
+    "write-pkg": "6.0.1"
   },
   "devDependencies": {
     "@fisker/eslint-config": "10.4.0",
