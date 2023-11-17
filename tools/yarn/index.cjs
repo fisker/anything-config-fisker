@@ -10,13 +10,13 @@ module.exports = {
         destination: '.yarnrc.yml',
       },
       {
-        source: 'files/yarn-3.4.1.cjs',
-        destination: '.yarn/releases/yarn-3.4.1.cjs',
+        source: 'files/yarn-4.0.2.cjs',
+        destination: '.yarn/releases/yarn-4.0.2.cjs',
       },
     ],
     dependencies: [],
     packageJson: {
-      packageManager: 'yarn@3.4.1',
+      packageManager: 'yarn@4.0.2',
     },
   },
 }
