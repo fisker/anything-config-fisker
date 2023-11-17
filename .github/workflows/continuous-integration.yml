@@ -9,50 +9,49 @@ on:
   #   - cron: "0 23 * * 6"
 
 jobs:
-  # test:
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #       os:
-  #         - "ubuntu-latest"
-  #         - "macos-latest"
-  #         - "windows-latest"
-  #       node_version:
-  #         - "18"
-  #         - "16"
-  #         - "14"
-  #       # exclude:
-  #       #   - os: "macos-latest"
-  #       #     node_version: "12"
-  #   name: Node.js ${{ matrix.node_version }} on ${{ matrix.os }}
-  #   runs-on: ${{ matrix.os }}
-  #   env:
-  #     YARN_ENABLE_IMMUTABLE_INSTALLS: false
-  #   # needs: [build]
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v3
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - "ubuntu-latest"
+          - "macos-latest"
+          - "windows-latest"
+        node_version:
+          - "20"
+          - "18"
+        # exclude:
+        #   - os: "macos-latest"
+        #     node_version: "12"
+    name: Node.js ${{ matrix.node_version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    env:
+      YARN_ENABLE_IMMUTABLE_INSTALLS: false
+    # needs: [build]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-  #     - name: Setup Node.js
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: ${{ matrix.node_version }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node_version }}
 
-  #     - name: Install Dependencies
-  #       run: yarn
+      - name: Install Dependencies
+        run: yarn
 
-  #     # - name: Download Artifact
-  #     #   uses: actions/download-artifact@v3
-  #     #   with:
-  #     #     name: dist
-  #     #     path: dist
+      # - name: Download Artifact
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     name: dist
+      #     path: dist
 
-  #     - name: Run Test
-  #       run: yarn test-coverage
+      - name: Run Test
+        run: yarn test-coverage
 
-  #     - uses: codecov/codecov-action@v3
-  #       with:
-  #         fail_ci_if_error: true
+      - uses: codecov/codecov-action@v3
+        with:
+          fail_ci_if_error: true
 
   lint:
     name: Lint
@@ -61,10 +60,10 @@ jobs:
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
 
       - name: Install Dependencies
         run: yarn
@@ -79,10 +78,10 @@ jobs:
   #     YARN_ENABLE_IMMUTABLE_INSTALLS: false
   #   steps:
   #     - name: Checkout
-  #       uses: actions/checkout@v3
+  #       uses: actions/checkout@v4
 
   #     - name: Setup Node.js
-  #       uses: actions/setup-node@v23
+  #       uses: actions/setup-node@v4
 
   #     - name: Install Dependencies
   #       run: yarn
@@ -91,7 +90,7 @@ jobs:
   #       run: yarn build
 
   #     - name: Upload Artifact
-  #       uses: actions/upload-artifact@v3
+  #       uses: actions/upload-artifact@v4
   #       with:
   #         name: dist
   #         path: dist
