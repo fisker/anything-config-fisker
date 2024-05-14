@@ -51,7 +51,7 @@
     "cp-file": "11.0.0",
     "del": "7.1.0",
     "enquirer": "2.4.1",
-    "esm-utils": "4.2.1",
+    "esm-utils": "4.3.0",
     "execa": "8.0.1",
     "has-yarn": "3.0.0",
     "is-path-in-cwd": "^4.0.0",
