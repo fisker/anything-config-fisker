@@ -1,35 +1,32 @@
 import fiskerEslintConfig from '@fisker/eslint-config'
-const ignores = /* Indent */ `
-  !.*
 
-  # vendors
-  **/node_modules/**
-  **/vendors/**
-  **/vendor/**
-  **/third-party/**
+const ignores = `
+!.*
 
-  # build file
-  **/dist/**
-  **/*.min.*
+# vendors
+**/node_modules/**
+**/vendors/**
+**/vendor/**
+**/third-party/**
 
-  # fixtures
-  **/fixtures/**
+# build file
+**/dist/**
+**/*.min.*
 
-  # test
-  **/.nyc_output/**
-  **/coverage/**
+# fixtures
+**/fixtures/**
 
-  # yarn
-  **/.yarn
+# test
+**/.nyc_output/**
+**/coverage/**
 
-  # project glob
+# yarn
+**/.yarn
+
+# project glob
 `
-      .split('\n')
-      .map((line) => line.trim())
-      .filter((pattern) => pattern && !pattern.startsWith('#'))
+  .split('\n')
+  .map((line) => line.trim())
+  .filter((pattern) => pattern && !pattern.startsWith('#'))
 
-export default [
-  ...fiskerEslintConfig,
-  {ignores,
-  },
-]
+export default [...fiskerEslintConfig, {ignores}]

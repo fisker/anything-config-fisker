@@ -34,7 +34,7 @@
     "dist:npm": "np --yolo --no-yarn",
     "fix": "run-p \"fix:*\"",
     "fix:eslint": "yarn lint:eslint --fix",
-    "fix:markdown": "markdownlint-cli2-fix",
+    "fix:markdown": "markdownlint-cli2 --fix",
     "fix:package-json": "sort-package-json \"package.json\" \"packages/*/package.json\"",
     "fix:prettier": "yarn lint:prettier --write",
     "install-to-machine": "npm install --global anything-config-fisker",

@@ -18,7 +18,7 @@ module.exports = {
       'scripts["lint"]': 'run-p "lint:*"',
       'scripts["lint:markdown"]': 'markdownlint-cli2',
       'scripts["fix"]': 'run-p "fix:*"',
-      'scripts["fix:markdown"]': 'markdownlint-cli2-fix',
+      'scripts["fix:markdown"]': 'markdownlint-cli2 --fix',
 
       // Clean
       'devDependencies["markdownlint-cli"]': undefined,
