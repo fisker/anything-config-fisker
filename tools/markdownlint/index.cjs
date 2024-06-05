@@ -12,14 +12,19 @@ module.exports = {
     dependencies: [
       'markdownlint-cli2',
       '@fisker/markdownlint-cli2-config',
-      'npm-run-all',
+      'npm-run-all2',
     ],
     packageJson: {
-      'devDependencies["markdownlint-cli"]': undefined,
       'scripts["lint"]': 'run-p "lint:*"',
       'scripts["lint:markdown"]': 'markdownlint-cli2',
-      'scripts["format"]': 'run-p "format:*"',
-      'scripts["format:markdown"]': 'markdownlint-cli2-fix',
+      'scripts["fix"]': 'run-p "fix:*"',
+      'scripts["fix:markdown"]': 'markdownlint-cli2-fix',
+
+      // Clean
+      'devDependencies["markdownlint-cli"]': undefined,
+      'devDependencies["npm-run-all"]': undefined,
+      'scripts["format"]': undefined,
+      'scripts["format:markdown"]': undefined,
     },
   },
 }

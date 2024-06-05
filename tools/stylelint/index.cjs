@@ -17,14 +17,19 @@ module.exports = {
       'stylelint',
       '@fisker/stylelint-config',
       'prettier',
-      'npm-run-all',
+      'npm-run-all2',
     ],
     packageJson: {
       'scripts["lint"]': 'run-p "lint:*"',
       'scripts["lint:stylelint"]':
         'stylelint "**/*.{css,scss,less,html,scss,vue}"',
-      'scripts["format"]': 'run-p "format:*"',
-      'scripts["format:stylelint"]': 'yarn lint:stylelint --fix',
+      'scripts["fix"]': 'run-p "fix:*"',
+      'scripts["fix:stylelint"]': 'yarn lint:stylelint --fix',
+
+      // Clean
+      'devDependencies["npm-run-all"]': undefined,
+      'scripts["format"]': undefined,
+      'scripts["format:stylelint"]': undefined,
     },
   },
 }

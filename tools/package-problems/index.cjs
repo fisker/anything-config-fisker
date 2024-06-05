@@ -7,7 +7,7 @@ module.exports = {
         destination: 'license',
       },
     ],
-    dependencies: ['npm-run-all', 'del-cli'],
+    dependencies: ['npm-run-all2', 'del-cli'],
     packageJson: {
       license: 'MIT',
       author: {
@@ -34,6 +34,8 @@ module.exports = {
       funding({name}) {
         return `https://github.com/fisker/${name}?sponsor=1`
       },
+      // Clean
+      'devDependencies["npm-run-all"]': undefined,
     },
   },
 }

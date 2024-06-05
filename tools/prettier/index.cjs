@@ -13,12 +13,18 @@ module.exports = {
         destination: 'prettier.config.js',
       },
     ],
-    dependencies: ['prettier', '@fisker/prettier-config', 'npm-run-all'],
+    dependencies: ['prettier', '@fisker/prettier-config', 'npm-run-all2'],
     packageJson: {
       'scripts["lint"]': 'run-p "lint:*"',
       'scripts["lint:prettier"]': 'prettier . --check',
-      'scripts["format"]': 'run-p "format:*"',
-      'scripts["format:prettier"]': 'yarn lint:prettier --write',
+      'scripts["fix"]': 'run-p "fix:*"',
+      'scripts["fix:prettier"]': 'yarn lint:prettier --write',
+
+
+      // Clean
+      'devDependencies["npm-run-all"]': undefined,
+      'scripts["format"]': undefined,
+      'scripts["format:prettier"]': undefined,
     },
   },
 }
