@@ -20,7 +20,6 @@ module.exports = {
       'scripts["fix"]': 'run-p "fix:*"',
       'scripts["fix:prettier"]': 'yarn lint:prettier --write',
 
-
       // Clean
       'devDependencies["npm-run-all"]': undefined,
       'scripts["format"]': undefined,

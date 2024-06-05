@@ -3,15 +3,17 @@ module.exports = {
   effects: {
     files: [
       {
-        source: 'files/ignore',
-        destination: '.eslintignore',
-      },
-      {
-        source: 'files/config.cjs',
-        destination: '.eslintrc.cjs',
+        source: 'files/config.mjs',
+        destination: 'eslint.config.mjs',
       },
       {
         destination: '.eslintrc.js',
+      },
+      {
+        destination: '.eslintrc.cjs',
+      },
+      {
+        destination: '.eslintignore',
       },
     ],
     dependencies: [
