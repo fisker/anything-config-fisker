@@ -1,6 +1,15 @@
 export default {
   name: 'stylelint',
-  *process({}) {
+  *process({
+    LINT_SCRIPT,
+    FIX_SCRIPT,
+    removeFile,
+    copyFile,
+    updatePackageJson,
+    installDevDependencies: installDevelopmentDependencies,
+    packageJson,
+    runCommand: spawn,
+  }) {
     yield copyFile(new URL('./files/ignore', '.stylelintignore'))
     yield copyFile(new URL('./files/config.cjs', 'stylelint.config.cjs'))
     yield removeFile(['stylelint.config.js'])
