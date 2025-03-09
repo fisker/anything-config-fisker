@@ -1,6 +1,6 @@
 export default {
   name: 'Commitlint (Uninstall)',
-  *process({removeFile}) {
+  *process({removeFile, updatePackageJson}) {
     yield removeFile('commitlint.config.cjs')
     yield updatePackageJson({
       devDependencies: {

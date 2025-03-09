@@ -8,8 +8,14 @@ export default {
     LINT_SCRIPT,
     FIX_SCRIPT,
   }) {
-    yield copyFile(new URL('./files/ignore', '.prettierignore'))
-    yield copyFile(new URL('./files/config.mjs', 'prettier.config.mjs'))
+    yield copyFile(
+      new URL('./files/ignore', import.meta.url),
+      '.prettierignore',
+    )
+    yield copyFile(
+      new URL('./files/config.mjs', import.meta.url),
+      'prettier.config.mjs',
+    )
     yield removeFile(['prettier.config.js'])
     yield installDevelopmentDependencies([
       'prettier',

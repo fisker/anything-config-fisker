@@ -1,13 +1,6 @@
 export default {
   name: 'Renovate',
-  *process({
-    copyFile,
-    removeFile,
-    installDevDependencies,
-    updatePackageJson,
-    LINT_SCRIPT,
-    FIX_SCRIPT,
-  }) {
+  *process({copyFile, removeFile}) {
     yield copyFile(
       new URL('./files/config.json5', import.meta.url),
       '.github/renovate.json5',

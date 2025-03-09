@@ -23,4 +23,6 @@ const importTool = async (name) => {
 
 const tools = await Array.fromAsync(files, (file) => importTool(file))
 
-export default tools
+export default tools.sort((toolA, toolB) =>
+  toolA.name.toLowerCase().localeCompare(toolB.name.toLowerCase()),
+)

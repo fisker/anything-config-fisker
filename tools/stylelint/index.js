@@ -7,13 +7,17 @@ export default {
     copyFile,
     updatePackageJson,
     installDevDependencies: installDevelopmentDependencies,
-    packageJson,
-    runCommand: spawn,
   }) {
-    yield copyFile(new URL('./files/ignore', '.stylelintignore'))
-    yield copyFile(new URL('./files/config.cjs', 'stylelint.config.cjs'))
+    yield copyFile(
+      new URL('./files/ignore', import.meta.url),
+      '.stylelintignore',
+    )
+    yield copyFile(
+      new URL('./files/config.cjs', import.meta.url),
+      'stylelint.config.cjs',
+    )
     yield removeFile(['stylelint.config.js'])
-    yield installDevDependencies([
+    yield installDevelopmentDependencies([
       'stylelint',
       '@fisker/stylelint-config',
       'prettier',

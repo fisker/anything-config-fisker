@@ -1,8 +1,13 @@
 export default {
   name: 'NPM & GitHub Problems',
-  *process({copyFile, installDependencies, updatePackageJson, packageJson}) {
+  *process({
+    copyFile,
+    installDevDependencies: installDevelopmentDependencies,
+    updatePackageJson,
+    packageJson,
+  }) {
     yield copyFile(new URL('./files/license.txt', import.meta.url), 'license')
-    yield installDependencies(['npm-run-all2', 'del-cli'])
+    yield installDevelopmentDependencies(['npm-run-all2', 'del-cli'])
     yield updatePackageJson({
       license: 'MIT',
       author: {
