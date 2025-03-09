@@ -51,6 +51,7 @@
     "esm-utils": "4.3.0",
     "has-yarn": "3.0.0",
     "latest-version": "9.0.0",
+    "nano-spawn": "0.2.0",
     "node-style-text": "0.0.7",
     "update-notifier": "7.0.0"
   },
