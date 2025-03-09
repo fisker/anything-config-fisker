@@ -8,8 +8,8 @@ export default {
     yield copyFile(
       new URL('./files/config.cjs', import.meta.url),
       'lint-staged.config.cjs',
-    ),
-      yield removeFile('lint-staged.config.js')
+    )
+    yield removeFile('lint-staged.config.js')
     yield installDevelopmentDependencies([
       'lint-staged',
       '@fisker/lint-staged-config',

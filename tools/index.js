@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises'
-import url from 'node:url'
 import path from 'node:path'
+import url from 'node:url'
 
 const files = await fs.glob('*/index.js', {
   cwd: import.meta.dirname,
