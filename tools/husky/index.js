@@ -1,20 +1,14 @@
 export default {
-  name: 'Husky',
-  *process({
-    copyFile,
-    removeFile,
-    installDevDependencies: installDevelopmentDependencies,
-    updatePackageJson,
-  }) {
-    yield copyFile(
-      new URL('./files/pre-commit.sh', import.meta.url),
-      '.husky/pre-commit',
-    )
-    yield removeFile(['.huskyrc.js', '.huskyrc.cjs'])
-    yield installDevelopmentDependencies('husky')
+  name: 'Husky (Uninstall)',
+  *process({removeFile, updatePackageJson}) {
+    yield removeFile(['.husky', '.huskyrc.js', '.huskyrc.cjs'])
     yield updatePackageJson({
       scripts: {
-        prepare: 'husky install',
+        prepare: undefined,
+      },
+      devDependencies: {
+        'markdownlint-cli': undefined,
+        'npm-run-all': undefined,
       },
     })
   },

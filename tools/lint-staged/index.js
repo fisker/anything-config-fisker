@@ -1,18 +1,15 @@
 export default {
-  name: 'Lint staged',
-  *process({
-    copyFile,
-    removeFile,
-    installDevDependencies: installDevelopmentDependencies,
-  }) {
-    yield copyFile(
-      new URL('./files/config.cjs', import.meta.url),
-      'lint-staged.config.cjs',
-    )
-    yield removeFile('lint-staged.config.js')
-    yield installDevelopmentDependencies([
-      'lint-staged',
-      '@fisker/lint-staged-config',
-    ])
+  name: 'Lint staged (Uninstall)',
+  *process({removeFile, updatePackageJson}) {
+    yield removeFile(['lint-staged.config.js', 'lint-staged.config.cjs'])
+    yield updatePackageJson({
+      scripts: {
+        prepare: undefined,
+      },
+      devDependencies: {
+        'lint-staged': undefined,
+        '@fisker/lint-staged-config': undefined,
+      },
+    })
   },
 }

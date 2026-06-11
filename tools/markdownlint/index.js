@@ -27,8 +27,10 @@ export default {
         format: undefined,
         'format:markdown': undefined,
       },
-      'markdownlint-cli': undefined,
-      'npm-run-all': undefined,
+      devDependencies: {
+        'markdownlint-cli': undefined,
+        'npm-run-all': undefined,
+      },
     })
   },
 }
