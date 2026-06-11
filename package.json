@@ -43,7 +43,6 @@
     "lint:markdown": "markdownlint-cli2",
     "lint:package-json": "yarn run fix:package-json --check",
     "lint:prettier": "prettier . --check",
-    "prepare": "husky install",
     "release": "run-s clean lint build fix dist install-to-machine",
     "test-coverage": "echo no test yet"
   },
@@ -59,14 +58,11 @@
   "devDependencies": {
     "@fisker/eslint-config": "15.2.0",
     "@fisker/husky-config": "4.1.6",
-    "@fisker/lint-staged-config": "3.3.5",
     "@fisker/markdownlint-cli2-config": "0.0.3",
     "@fisker/prettier-config": "5.2.0",
     "cz-conventional-changelog": "3.3.0",
     "del-cli": "7.0.0",
     "eslint": "9.39.2",
-    "husky": "9.1.7",
-    "lint-staged": "16.2.7",
     "markdownlint-cli2": "0.20.0",
     "npm-run-all2": "8.0.4",
     "prettier": "3.7.4",

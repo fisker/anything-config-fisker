@@ -7,8 +7,7 @@ export default {
         prepare: undefined,
       },
       devDependencies: {
-        'markdownlint-cli': undefined,
-        'npm-run-all': undefined,
+        husky: undefined,
       },
     })
   },
