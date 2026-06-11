@@ -1,5 +1,11 @@
+approvedGitRepositories: null
+
+compressionLevel: mixed
+
 defaultSemverRangePrefix: ""
 
 enableGlobalCache: true
 
 nodeLinker: node-modules
+
+npmMinimalAgeGate: 0
